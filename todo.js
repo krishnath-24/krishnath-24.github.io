@@ -61,6 +61,7 @@ function createTodo(todoText) {
 }
 
 function deleteTodo(e){
+    
     e.parentElement.remove();
 
     if(todoCount > 0)

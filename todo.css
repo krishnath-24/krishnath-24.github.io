@@ -12,8 +12,8 @@ body{
     display: flex;
     flex-direction: column;
     align-items: center;
-    min-width: 500px;
-    min-height: 600px;
+    min-width: 300px;
+    min-height: 500px;
     background: linear-gradient(to bottom,#9c27b0,#ab47bc) ;
     border-radius: 20px;
     padding: 10px;
