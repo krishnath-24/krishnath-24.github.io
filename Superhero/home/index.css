@@ -8,6 +8,11 @@ body{
     max-width: 500px;
 }
 
+#alert{
+    min-width: 200px;
+    max-width: 500px;
+}
+
 
 .list-group{
     display: flex;

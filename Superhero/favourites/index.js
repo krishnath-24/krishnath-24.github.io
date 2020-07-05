@@ -1,7 +1,7 @@
 (function() {
 
     var favourites = JSON.parse(localStorage.getItem("favourites"));
-    
+    var alert = document.getElementById("alert");
     var access_token = '1218793861791825';
     var listGroup = document.getElementsByClassName("list-group")[0];
     
@@ -12,8 +12,6 @@
 
             const superhero = await fetch(`https://superheroapi.com/api.php/${access_token}/${id}`);
             const data = await superhero.json();
-
-            console.log(data);
             renderSuperhero(data);
 
         }
@@ -53,10 +51,7 @@
 
         } else {
 
-            let li = document.createElement('li');
-            li.innerHTML = `<strong>No Favourites are there...!</strong>`;
-            listGroup.innerHTML = "";
-            listGroup.appendChild(li);
+            showNotification("error","No Favourites at the moment!");
         }
     }
 
@@ -73,20 +68,52 @@
 
             let toDeleteSuperhero = document.querySelectorAll(`[data-id='${id}']`)[0];
             toDeleteSuperhero.remove();
+
+            showNotification("success","Favourite Deleted Successfuly");
+
+
+            setTimeout(() => {
+                if(favourites.length == 0) {
+                    showNotification("error","No Favourites at the moment!");
+                }
+            }, 2500);
             
         }
 
         if(event.target.id === "details") {
         
             let id = event.target.parentNode.parentNode.parentNode.getAttribute("data-id");
-            
             window.document.location = "../superhero_details/details.html"+'?id='+id;
         }
 
     }
 
 
+    function showNotification(type, message) {
 
+        console.log("notification",type,message);
+    
+        
+        if(type === "success") {
+    
+            alert.classList.add("alert-success");
+            alert.classList.remove("alert-danger")
+        }
+    
+        else if(type === "error") {
+            alert.classList.remove("alert-success");
+            alert.classList.add("alert-danger");
+        }
+    
+        alert.innerText = message;
+        alert.style.display="block";
+    
+        setTimeout(() => {
+            alert.style.display = "none";
+        }, 2500);
+    
+    }
+    
 
 
 
@@ -95,7 +122,6 @@
         renderFavourites();
     }
     
-
     init();
 
 })();
