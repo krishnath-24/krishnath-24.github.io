@@ -1,0 +1,32 @@
+
+body{
+    display: flex;
+    justify-content: center;
+}
+
+.container{
+    margin: 10px;
+    width: 80%;
+    
+}
+
+.card{
+    display: block;
+    width: 90%;
+    max-width: 600px;
+
+}
+
+.card-img-top{
+    max-height: 300px;
+    padding: 5px;
+    border-radius: 2px;
+}
+
+.list-group{
+    margin: 10px;
+}
+
+.list-group li::first-letter {
+    text-transform: uppercase;
+}

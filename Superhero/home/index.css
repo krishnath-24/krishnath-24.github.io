@@ -1,0 +1,39 @@
+body{
+    height: 100%;
+    width: 100%;
+}
+
+.search{
+    min-width: 200px;
+    max-width: 500px;
+}
+
+
+.list-group{
+    display: flex;
+    flex-direction: row !important;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.list-group li {
+    width: fit-content;   
+    list-style-type: none; 
+}
+
+
+.card-img-top{
+    height: 150px;
+    width:  150px;
+}
+
+.card-body a {
+    display: inline-block;
+}
+
+.card:hover{
+    box-shadow: 1px 2px 10px 1px black;
+    transition: 0.3s ease-in-out;
+}
