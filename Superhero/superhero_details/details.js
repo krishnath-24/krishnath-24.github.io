@@ -2,7 +2,7 @@
 
     //frequesntly used variables
     let url = location.search;
-    var tokenId = '1218793861791825';
+    var access_token = '1218793861791825';
 
 
 
@@ -19,7 +19,7 @@
     async function searchSuperheroById(id)  {
 
         try{
-            const superhero = await fetch(`https://superheroapi.com/api.php/${tokenId}/${id}`);1
+            const superhero = await fetch(`https://superheroapi.com/api.php/${access_token}/${id}`);1
             const data = await superhero.json();
 
 

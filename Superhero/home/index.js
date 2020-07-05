@@ -4,6 +4,7 @@
 var searchElement = document.getElementsByClassName("search")[0];
 var access_token = '1218793861791825'; // token to access the superhero api
 var listGroup = document.getElementsByClassName("list-group")[0];
+var favourites = [];
 
 
 
@@ -57,7 +58,7 @@ function displaySuperhero(item, index) {
       <h5 class="card-title">${item.name}</h5>
       <p class="card-text"></p>
       <a href="#" id="details"  class=" btn btn-primary mt-1">View Details</a>
-      <a href="#" id="favourites" class="btn btn-success mt-1">Add To Favourites</a>
+      <Button id="addFavourites" class="btn btn-success mt-1">Add To Favourites</Button>
     </div>
   </div>`;
 
@@ -69,11 +70,37 @@ function displaySuperhero(item, index) {
 
 function handleClick(event) {
 
-    let id = event.target.parentNode.parentNode.parentNode.getAttribute("data-id");
     if(event.target.id === "details") {
         
+        let id = event.target.parentNode.parentNode.parentNode.getAttribute("data-id");
+        
+        // console.log(event.target.id);
         window.document.location = "../superhero_details/details.html"+'?id='+id;
     }
+
+    if(event.target.id === "addFavourites") {
+
+        let id = event.target.parentNode.parentNode.parentNode.getAttribute("data-id");
+
+        addToFavourites(id);
+        alert("favourite added...!");
+    }
+
+    if(event.target.id === "favourites") {
+    }
+}
+
+function addToFavourites(id) {
+    
+    if(favourites.indexOf(id) === -1) {
+        favourites.push(id);
+        localStorage.setItem("favourites",JSON.stringify(favourites));
+    }
+
+    else {
+        alert("The hero is already a favourite");
+    }
+
 }
 
 
