@@ -1,6 +1,6 @@
 (function(){
 
-// getting reference to the dom elements
+    // getting reference to the dom elements
     var searchElement = document.getElementsByClassName("search")[0];
     var access_token = '1218793861791825'; // token to access the superhero api
     var listGroup = document.getElementsByClassName("list-group")[0];
@@ -9,10 +9,12 @@
 
 
 
+    // function to make a request to api and fetch data using superhero name.
     async function searchSuperheroByName(name) {
 
         try{
 
+            // making an api call.
             const superhero = await fetch(`https://superheroapi.com/api.php/${access_token}/search/${name}`);
 
             const data = await superhero.json();
@@ -101,7 +103,6 @@
             // show alert if the superhero is already a favourite.
             showAlert("error", "Superhero already favourite.");
         }
-
     }
 
     function showAlert(type, message) {
