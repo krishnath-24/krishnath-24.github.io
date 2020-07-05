@@ -28,7 +28,7 @@
         
         let li = document.createElement('li');
     
-        li.innerHTML = `<div class="card m-2" style="width: 18rem;">
+        li.innerHTML = `<div class="card m-2" >
         <img src="${item.image.url}" class="card-img-top" alt="...">
         <div class="card-body">
         <h5 class="card-title">${item.name}</h5>
@@ -73,7 +73,14 @@
 
             let toDeleteSuperhero = document.querySelectorAll(`[data-id='${id}']`)[0];
             toDeleteSuperhero.remove();
+            
+        }
 
+        if(event.target.id === "details") {
+        
+            let id = event.target.parentNode.parentNode.parentNode.getAttribute("data-id");
+            
+            window.document.location = "../superhero_details/details.html"+'?id='+id;
         }
 
     }

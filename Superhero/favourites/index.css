@@ -4,6 +4,15 @@ body{
 }
 
 .list-group {
+    width: 100%;
     display: flex;
+    flex-wrap: wrap !important;
     flex-direction: row !important;
+}
+
+
+.card-img-top{
+    max-height: 250px;
+    max-width: 250px;
+    padding: 1px;
 }

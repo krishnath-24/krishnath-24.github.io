@@ -86,7 +86,12 @@ function handleClick(event) {
         alert("favourite added...!");
     }
 
-    if(event.target.id === "favourites") {
+
+    if(event.target.id === "details") {
+        
+        let id = event.target.parentNode.parentNode.parentNode.getAttribute("data-id");
+        
+        window.document.location = "../superhero_details/details.html"+'?id='+id;
     }
 }
 
