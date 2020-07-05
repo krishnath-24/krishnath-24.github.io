@@ -3,6 +3,8 @@ body{
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
+    background : #f0ecec !important;
+    padding-top: 20px;
 }
 
 .container{

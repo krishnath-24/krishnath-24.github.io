@@ -21,13 +21,14 @@
 
             if(data.response === "success") {
 
-                renderList(data.results);
+                renderList(data.results); // render the list of superheros.
             }
-            else renderList([]);
+            else renderList([]); // render empty list.
 
 
         } catch(err) {
             console.log(err);
+            showAlert("error","Error fetching the data..!");
         }
 
     }
@@ -62,6 +63,7 @@
     </div>`;
 
 
+        // set the data-id attribute
         li.setAttribute('data-id',item.id);
         listGroup.appendChild(li);
     }
