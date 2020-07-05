@@ -44,6 +44,7 @@ function createTodo(todoText) {
     checkBox.type = "checkbox";
     checkBox.classList.add("round");
     checkBox.checked = false;   
+    
     span.innerHTML = todoText;
 
     button.className = "delete";
