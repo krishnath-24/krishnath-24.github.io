@@ -31,27 +31,24 @@
     }
 
 
+    // function to render the superhero list.
     function renderList(list) {
 
+        // if the superhero list is not empty.
         if(list.length > 0) {
 
             listGroup.innerHTML = "";
             list.forEach(displaySuperhero);
 
-        } else {
-
-            var li = document.createElement('li');
-
-            li.innerText = 'No superhero found';
-            listGroup.innerHTML = "";
-            listGroup.appendChild(li);
-        }
+        } 
     }
 
+    // function to append a superhero to the list.
     function displaySuperhero(item, index) {
 
         let li = document.createElement('li');
         
+        // html to display a superhero using card.
         li.innerHTML = `<div class="card m-2" style="width: 18rem;">
         <img src="${item.image.url}" class="card-img-top" alt="...">
         <div class="card-body">
@@ -68,59 +65,67 @@
     }
 
 
-    function handleClick(event) {
+    // click handler for actions like getting details and adding to favourites.
+    function clickHandler(event) {
 
+        // When show details button is clicked.
         if(event.target.id === "details") {
             
             let id = event.target.parentNode.parentNode.parentNode.getAttribute("data-id");
-            
+
             window.document.location = "../superhero_details/details.html"+'?id='+id;
         }
 
+        // When add to favourite button is clicked.
         if(event.target.id === "addFavourites") {
 
             let id = event.target.parentNode.parentNode.parentNode.getAttribute("data-id");
             addToFavourites(id);
         }
 
-        if(event.target.id === "details") {
-            
-            let id = event.target.parentNode.parentNode.parentNode.getAttribute("data-id");
-            
-            window.document.location = "../superhero_details/details.html"+'?id='+id;
-        }
     }
 
+
+    // function to add a superhero to favourites using localstorage
     function addToFavourites(id) {
         
+        // if the superhero is not a favourite already.
         if(favourites.indexOf(id) === -1) {
             favourites.push(id);
-            showNotification("success","Superhero added to favourites..!");
+            showAlert("success","Superhero added to favourites..!");
             localStorage.setItem("favourites",JSON.stringify(favourites));
         }
 
         else {
-            showNotification("error", "Superhero already favourite.");
+
+            // show alert if the superhero is already a favourite.
+            showAlert("error", "Superhero already favourite.");
         }
 
     }
 
-    function showNotification(type, message) {
+    function showAlert(type, message) {
 
+        // if the alert type is success.
         if(type === "success") {
 
             alert.classList.add("alert-success");
             alert.classList.remove("alert-danger")
         }
 
+        // if the alert type is error
         if(type === "error") {
             alert.classList.remove("alert-success");
             alert.classList.add("alert-danger");
         }
 
+
+        // display the alert.
         alert.innerText = message;
         alert.style.display="block";
 
+
+        // hide the alert after 2.5s.
         setTimeout(() => {
             alert.style.display = "none";
         }, 2500);
@@ -128,14 +133,20 @@
     }
 
 
-    searchElement.addEventListener('keyup', (e) => {
-        searchSuperheroByName(searchElement.value);
-    });
+    // function to initialize the flow of the app.
+    function initialize() {
 
-    document.addEventListener('click', (event) => {
-        handleClick(event);
-    });
+        // adding listener on the search bar.
+        searchElement.addEventListener('keyup', (e) => {
+            searchSuperheroByName(searchElement.value);
+        });
+    
+        // adding click listener for different actions.
+        document.addEventListener('click', (event) => {
+            clickHandler(event);
+        });
+    }
 
-
+    initialize();
 
 })();
