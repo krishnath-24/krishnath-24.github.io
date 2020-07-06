@@ -138,7 +138,7 @@
         // hide the alert after 2.5s.
         setTimeout(() => {
             alert.style.display = "none";
-        }, 2500);
+        }, 1500);
 
     }
 
