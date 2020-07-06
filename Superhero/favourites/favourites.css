@@ -1,8 +1,8 @@
 body{
     height: 100%;
     width: 100%;
+    background-color: black !important;
 }
-
 
 /* style the list group */
 .list-group {
@@ -10,6 +10,8 @@ body{
     display: flex;
     flex-wrap: wrap !important;
     flex-direction: row !important;
+    background-color: black;
+    border-radius: 0px !important;
 }
 
 
@@ -18,4 +20,9 @@ body{
     max-height: 250px;
     max-width: 250px;
     padding: 1px;
+}
+
+#alert{
+    min-width: 200px;
+    max-width: 500px;
 }

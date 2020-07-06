@@ -1,6 +1,8 @@
 body{
     height: 100%;
     width: 100%;
+    background-color: black !important;
+
 }
 
 .search{
@@ -20,7 +22,6 @@ body{
     flex-wrap: wrap;
     align-content: center;
     justify-content: center;
-    padding: 20px;
 }
 
 .list-group li {
@@ -28,10 +29,13 @@ body{
     list-style-type: none; 
 }
 
-
+.card{
+    border: 1px solid black;
+}
 .card-img-top{
     height: 150px;
     width:  150px;
+    padding: 1px;
 }
 
 .card-body a {
@@ -39,6 +43,6 @@ body{
 }
 
 .card:hover{
-    box-shadow: 1px 2px 10px 1px black;
-    transition: 0.3s ease-in-out;
+    box-shadow: 0px 0px 5px 1px #ccc;
+    transition: 0.2s ease-in-out;
 }

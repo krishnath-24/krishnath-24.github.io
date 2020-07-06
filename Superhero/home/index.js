@@ -58,7 +58,7 @@
         <h5 class="card-title">${item.name}</h5>
         <p class="card-text"></p>
         <a href="#" id="details"  class=" btn btn-primary mt-1">View Details</a>
-        <Button id="addFavourites" class="btn btn-success mt-1">Add To Favourites</Button>
+        <Button id="addFavourites" class="btn btn-danger mt-1">Add To Favourites</Button>
         </div>
     </div>`;
 
@@ -86,6 +86,15 @@
             let id = event.target.parentNode.parentNode.parentNode.getAttribute("data-id");
             addToFavourites(id);
         }
+
+        if(event.target.id === "submit") {
+            let name = searchElement.value;
+            if(name && name.length > 1) searchSuperheroByName(name);
+    
+            else showAlert("error","Name shoule be atleast two chars long!");
+        }
+
+        
 
     }
 
@@ -141,7 +150,14 @@
 
         // adding listener on the search bar.
         searchElement.addEventListener('keyup', (e) => {
-            searchSuperheroByName(searchElement.value);
+            let name = searchElement.value;
+            if(event.keyCode == 13) {
+
+                if(name && name.length > 1) searchSuperheroByName(name);
+    
+                else showAlert("error","Name shoule be atleast two chars long!");
+            }
+            else if(name && name.length > 1 ) searchSuperheroByName(name);
         });
     
         // adding click listener for different actions.
