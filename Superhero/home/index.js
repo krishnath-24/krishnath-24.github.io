@@ -94,8 +94,6 @@
             else showAlert("error","Name shoule be atleast two chars long!");
         }
 
-        
-
     }
 
 
@@ -158,6 +156,8 @@
                 else showAlert("error","Name shoule be atleast two chars long!");
             }
             else if(name && name.length > 1 ) searchSuperheroByName(name);
+
+            else showAlert("error","No Results...!");
         });
     
         // adding click listener for different actions.
