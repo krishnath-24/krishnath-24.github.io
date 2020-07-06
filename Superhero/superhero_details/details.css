@@ -5,6 +5,8 @@ body{
     flex-wrap: wrap;
     background : #f0ecec !important;
     padding-top: 20px;
+    background-attachment: fixed;
+    background-color: black !important;
 }
 
 .container{
