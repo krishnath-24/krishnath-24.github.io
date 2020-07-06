@@ -157,7 +157,6 @@
             }
             else if(name && name.length > 1 ) searchSuperheroByName(name);
 
-            else showAlert("error","No Results...!");
         });
     
         // adding click listener for different actions.
