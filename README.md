@@ -1,1 +1,1 @@
-Repository for the career camp tests.
+Repository for the career camp projects.
