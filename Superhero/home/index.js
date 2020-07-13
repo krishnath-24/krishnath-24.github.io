@@ -76,7 +76,6 @@
         if(event.target.id === "details") {
             
             let id = event.target.parentNode.parentNode.parentNode.getAttribute("data-id");
-
             window.document.location = "../superhero_details/details.html"+'?id='+id;
         }
 
@@ -148,7 +147,9 @@
 
         // adding listener on the search bar.
         searchElement.addEventListener('keyup', (e) => {
+            
             let name = searchElement.value;
+
             if(event.keyCode == 13) {
 
                 if(name && name.length > 1) searchSuperheroByName(name);

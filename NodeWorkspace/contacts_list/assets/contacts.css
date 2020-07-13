@@ -1,0 +1,29 @@
+body{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+}
+
+.my-container{
+    min-width: 400px;
+}
+
+ul{
+    display: flex !important;
+    align-items: center !important;
+}
+
+ul li{
+    min-width: 400px;
+    padding: 5px !important;
+    margin-top: 5px;
+    display: flex !important;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+.details{
+    display: flex;
+}

@@ -1,0 +1,42 @@
+<html>
+    <head>
+        <title>
+            <%= title %>
+        </title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="/contacts.css">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    </head>
+
+    <body>
+
+        <h2><i class="fa fa-address-book mr-2"></i>Welcome to contacts list!</h2>
+        <div class="jumbotron my-container">
+            <ul class="list-group container">
+                <% for(let contact of contacts) { %>
+    
+                    <div class="details">
+                        <li class="list-group-item">
+                            <p class="d-inline mr-5 text-primary text-capitalize"><%= contact.name %></p>
+                            <p class="d-inline text-info"><%= contact.phone %> </p>
+                            <div class="delete-button ">
+                                <a class="text-danger" href="/delete-contact<%= contact.phone%> "><i class="fa fa-window-close"></i></a>
+                            </div>
+                        </li>
+                        
+                    </div>
+    
+    
+                <% } %>
+            </ul>
+        </div>
+
+        <form action="/create-contact" method="POST">
+            <input type="text" name="name" id="name" placeholder="Name" required>
+            <input type="text" name="phone" id="phone" placeholder="phone" required>
+            <button class="btn btn-sm mb-1 btn-primary">Add Contact</button>
+        </form>
+
+        <script type="text/javascript" src="/contacts.js"></script>
+    </body>
+</html>
