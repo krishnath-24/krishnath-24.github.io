@@ -1,5 +1,7 @@
 const express = require('express');
 const port = 8000;
+const db = require("./config/mongoose");
+const Contact = require("./models/contact");
 const app = express();
 const path = require('path');
 
@@ -8,16 +10,7 @@ app.set('views',path.join(__dirname, 'views'));
 app.use(express.urlencoded({extended:true}));
 app.use(express.static('assets'));
 
-var contacts = [
-    {
-        name : 'Anuj',
-        phone : '8171874416'
-    },
-    {
-        name: 'Slim',
-        phone : '92847291821'
-    }
-]
+var contacts =[];
 
 app.get('/',(req,res)=>{
     
@@ -27,22 +20,42 @@ app.get('/',(req,res)=>{
 
 app.get('/contacts',(req,res)=> {
 
-    return res.render('contacts',{
-        contacts : contacts,
-        title : 'Contacts List'
+    Contact.find({},(error, data)=>{
+
+        if(error) {
+            console.log(error);
+            return;
+        }
+    
+        return res.render('contacts',{
+            contacts : data,
+            title : 'Contacts List'
+        });
+
     });
+
+    
 })
 
 app.post('/create-contact',(req,res)=>{
+
+    Contact.create(req.body,function(error, newContact){
+        if(error) {
+            console.log("error",error);
+            return;
+        }
+
+        return res.redirect("back");
+    })
     
-    contacts.push(req.body);
-    return res.redirect('back');
 });
 
-app.get('/delete-contact:phone',(req,res)=>{
+app.get('/delete-contact:id',(req,res)=>{
 
-    contacts = contacts.filter((contact)=> contact.phone !== req.params.phone);
-    res.redirect('back');
+    Contact.findOneAndDelete({_id : req.params.id},(error, newContacts)=>{
+    });
+    
+    res.redirect("/contacts");
 });
 
 app.listen(port,()=>{

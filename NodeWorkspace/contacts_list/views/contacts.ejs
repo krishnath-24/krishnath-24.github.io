@@ -20,13 +20,11 @@
                             <p class="d-inline mr-5 text-primary text-capitalize"><%= contact.name %></p>
                             <p class="d-inline text-info"><%= contact.phone %> </p>
                             <div class="delete-button ">
-                                <a class="text-danger" href="/delete-contact<%= contact.phone%> "><i class="fa fa-window-close"></i></a>
+                                <a class="text-danger" href="/delete-contact<%= contact._id%> "><i class="fa fa-window-close"></i></a>
                             </div>
                         </li>
                         
                     </div>
-    
-    
                 <% } %>
             </ul>
         </div>
