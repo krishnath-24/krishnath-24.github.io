@@ -5,7 +5,7 @@
     var access_token = '1218793861791825'; // token to access the superhero api
     var listGroup = document.getElementsByClassName("list-group")[0];
     var alert = document.getElementById("alert");
-    var favourites = JSON.parse(localStorage.getItem("favourites"));
+    var favourites = [];
 
 
 
@@ -98,6 +98,8 @@
 
     // function to add a superhero to favourites using localstorage
     function addToFavourites(id) {
+        
+        favourites = JSON.parse(localStorage.getItem("favourites"));
         
         // if the superhero is not a favourite already.
         if(favourites.indexOf(id) === -1) {
