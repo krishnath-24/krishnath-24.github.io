@@ -111,11 +111,10 @@
             showAlert("success","Favourite Deleted Successfully");
 
             // check if the list becomes empty, then show alert if it is.
-            setTimeout(() => {
-                if(favourites.length == 0) {
+            if(favourites.length == 0) {setTimeout(() => {
                     showAlert("error","No Favourites at the moment!");
-                }
-            }, 2500);
+                    }, 2500);
+            }
             
         }
 
@@ -123,7 +122,7 @@
         if(event.target.id === "details") {
         
             let id = event.target.parentNode.parentNode.parentNode.getAttribute("data-id");
-            window.document.location = "../superhero_details/details.html"+'?id='+id;
+            window.open("../superhero_details/details.html"+'?id='+id,"_blank");
         }
 
     }

@@ -5,7 +5,7 @@
     var access_token = '1218793861791825'; // token to access the superhero api
     var listGroup = document.getElementsByClassName("list-group")[0];
     var alert = document.getElementById("alert");
-    var favourites = [];
+    var favourites = JSON.parse(localStorage.getItem("favourites"));
 
 
 

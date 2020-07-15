@@ -45,7 +45,7 @@
         <div class="card-body">
           <h5 class="card-title">${data.name}</h5>
           <p class="card-text">${data.connections["group-affiliation"]}</p>
-          <a href="../home/index.html" class="btn btn-primary">Home</a>
+          <a  href="../home/index.html" class="btn btn-primary">Home</a>
         </div>
       </div>`;
 
