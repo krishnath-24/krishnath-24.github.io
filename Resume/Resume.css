@@ -1,0 +1,393 @@
+body {
+    margin: 0px;
+    padding: 0px;
+    font-family: sans-serif;
+    font-size : 10px;
+}
+
+/* Body Header */
+
+#body-header {
+    height: 65vh;
+    opacity: 0.8;
+    background-image: url(https://ninjasfiles.s3.amazonaws.com/asset_0000000000000020_1549743985_macbook_mouse.jpg);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+    
+/* Skills container */
+
+section {
+    width : 100%;
+    display : flex;
+    align-items : center;
+    flex-direction : column;
+    min-height: 50vh;
+}   
+
+section:nth-child(2n) {
+    background-color: lightgray;
+}
+
+section:nth-child(2n + 1) {
+    background-color : white;
+}
+
+/* Horizontal Lists */
+
+
+.horizontal-list {  
+    padding-top: 30px;
+    list-style: none;
+    padding-left: 0px;
+}
+
+.horizontal-list li {
+    display: inline-block;
+    margin: 0px 8px 8px 0px;
+}
+
+.horizontal-list li a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.5s;
+    font-size: 20px;
+    margin-left: 10px;
+}
+
+.horizontal-list li a:hover {
+    color: lightgrey;
+}
+
+.nav-menu li a:hover{
+    border-bottom: 1px solid white;
+    transition : all 0.1s;
+}
+
+.text-center {
+    text-align: center;
+}
+
+#name {
+    vertical-align: middle;
+    color: white;
+    margin: 0 auto;
+    text-align: center;
+    margin-top: 150px;
+    font-size: 40px;
+    margin-bottom: 10px;
+}
+
+/* Social icons */
+
+.social-icons {
+    margin-top: 0px;
+    padding-top: 5px;
+    text-align: center;
+
+}
+
+.social-icons li a {
+    margin-left: 7px;
+    margin-right: 8px;
+    padding: 2px;
+    
+}
+.social-icons li a i:hover {
+    box-shadow: 0px 0px 6px 5px rgba(230,196,196,0.2);
+}
+.horizontal-list li a i {
+    padding: 5px;
+    border-radius: 50%;
+    font-size : 1.2rem;
+    height : 30px;
+    width : 30px;   
+}
+
+
+/* Section heading */
+
+.section-heading span{
+    font-size: 35px;
+}
+
+
+/* About Section */
+
+.about-container {
+    width: 100%;
+}
+
+.about-container #profile-image{
+    position: relative;
+    border-radius : 50%;
+    margin-top: -100px;
+    height: 250px;
+    width: 250px;
+}
+
+.about-container #about-text {
+    font-size: 25px;
+    color: #696767;
+    text-align: justify;
+    width: 60%;
+    margin: auto;
+    margin-top : 30px;
+}
+
+
+/* Common margin classes */
+.mb75px{
+    margin-bottom : 75px;
+
+}
+
+/* Common colors classes */
+.blue {
+    background-color: blue;
+}
+
+.green {
+    background-color: green;
+}
+
+.orange {
+    background-color: orange;
+}
+
+.gray {
+    background-color: gray;
+}
+
+
+/* Common width classes */
+
+.bad{
+    width: 30%;
+}
+
+.average{
+    width: 50%;
+}
+
+.good{
+    width: 60%;
+}
+
+.excellent{
+    width: 90%;
+}
+
+
+
+/* Skills section */
+
+
+
+.section-heading {
+    font-size: 30px;
+    text-align:center;
+    color: blue;
+}
+
+.skills {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.skills-display{
+    width: 70%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    height: 50%;
+}
+
+.skill-progress {
+    height: 40px;
+    width: 200px;
+    background-color: rgb(170, 165, 165);
+    border-radius: 30px;
+    overflow: hidden;
+    margin: 20px;
+}
+
+.skill-progress-indicator{
+    height: 100%;
+    color: white;
+    align-items: center; 
+    display: flex;
+}
+
+.skill-name {
+    font-size: 15px;
+    margin-left: 10px;
+}
+
+
+/* Experience Section */
+
+
+
+/* Portfolio section */
+
+.project-display {
+
+    display: flex;
+    width: 80%;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+
+}
+
+.project{
+    position: relative;
+    text-align: center;
+    padding: 0px;
+    margin: 0px;
+    border-radius: 5px;
+    overflow: hidden;
+    margin: 10px;
+}
+
+.project-image{
+    width: 400px;
+    height: 400px;
+}
+
+.project-content{
+    position: absolute;
+    margin-bottom: 10px;
+    padding: 0px;
+    background: rgba(135, 137, 138, 0.72);
+    color: white;
+    visibility: hidden;
+    opacity: 0;
+    height: 400px;
+    width: 400px;
+    font-size: 25px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    transition: opacity .2s, visibility .2s;
+    margin-block-start: 0px;
+    margin-block-end: 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center  ;
+}
+
+.project:hover .project-content{
+    visibility: visible;
+    opacity: 1; 
+}
+
+
+
+
+/* Contact Section */
+
+#contact {
+    background-image: linear-gradient(45deg, #2857a4,#44346d);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-content: center;
+    min-height: 75vh;
+}
+
+#contact .section-heading {
+    margin-top: 50px;
+}
+
+#contact .section-heading span {
+    color: white;
+    font-size: 40px;
+}
+
+#contact .contact-container{
+    width: 80%;
+    display: flex;
+    justify-content: space-around;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    margin-bottom: 5%;
+}
+
+.contact-form {
+    width: 45%;
+}
+
+.contact-container .contact-form #contact-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+.contact-container .contact-form #contact-form .form-input {
+    background:transparent;
+    border: none;
+    border-bottom: 3px solid #cccccc;
+    padding: 20px;
+    font-size: large;
+    outline: none;
+    color: #cccccc;
+}
+
+.contact-container .contact-form #contact-form #message-input{
+    margin-top: 20px;
+}
+
+.contact-container .contact-form #contact-form button{
+    margin-top: 40px;
+    background:transparent;
+    color: white;
+    padding: 15px;
+    border-radius: 5px;
+    font-size: 20px;
+    align-self: center;
+    overflow-wrap: break-word;
+    cursor: pointer;
+    box-shadow: 1px 2px 10px 2px #08234d;
+    border: none;
+
+}
+.contact-container .contact-form #contact-form button:hover{
+    background-color: #0c3374;
+    box-shadow: none;
+    transition: all 0.2s ;
+}
+
+
+.contact-container .contact-details {
+    color: white;
+    width: 40%;
+}
+.contact-container .contact-details h1{
+    font-size: 25px;
+}
+
+.contact-container .contact-details p{
+    font-size: 16px;
+    font-weight: 200;
+}
+
+.contact-container .contact-details #address-list {
+
+    list-style-type: none;
+    margin: 0px;
+    padding: 0px;
+}
+
+.contact-container .contact-details #address-list li i{
+    margin-right: 10px;
+    font-size: 20px;
+    height: 20px;
+    width: 20px;
+}
+
+.contact-container .contact-details #address-list li i, span{
+
+    font-size: 20px;
+    margin-bottom: 15px;
+}
