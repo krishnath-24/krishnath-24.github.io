@@ -57,7 +57,7 @@
         <div class="card-body">
         <h5 class="card-title">${item.name}</h5>
         <p class="card-text"></p>
-        <a href="#" id="details"  class=" btn btn-primary mt-1">View Details</a>
+        <a href="#" target="_blank" id="details"  class=" btn btn-primary mt-1">View Details</a>
         <Button id="addFavourites" class="btn btn-danger mt-1">Add To Favourites</Button>
         </div>
     </div>`;
