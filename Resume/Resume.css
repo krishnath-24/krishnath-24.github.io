@@ -24,6 +24,7 @@ section {
     align-items : center;
     flex-direction : column;
     min-height: 50vh;
+    margin-bottom: 20px;
 }   
 
 section:nth-child(2n) {
@@ -239,50 +240,52 @@ section:nth-child(2n + 1) {
     display: flex;
     width: 80%;
     flex-wrap: wrap;
-    justify-content: space-evenly;
+    justify-content: space-between;
     align-items: center;
 
 }
 
 .project{
     position: relative;
-    text-align: center;
     padding: 0px;
     margin: 0px;
     border-radius: 5px;
     overflow: hidden;
-    margin: 10px;
+    margin: 20px;
+    border: 1px solid #c5c4c4;
 }
 
 .project-image{
-    width: 400px;
-    height: 400px;
+    max-width: 400px;
+    max-height: 400px;
+    min-height: 200px;
+    min-width: 200px;
+    transition: all 0.2s ease-in-out;
 }
 
 .project-content{
     position: absolute;
-    margin-bottom: 10px;
-    padding: 0px;
-    background: rgba(135, 137, 138, 0.72);
-    color: white;
-    visibility: hidden;
+    font-size: 20px;
+    top: 40%;
+    text-align: center;
     opacity: 0;
-    height: 400px;
-    width: 400px;
-    font-size: 25px;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    transition: opacity .2s, visibility .2s;
-    margin-block-start: 0px;
-    margin-block-end: 0px;
-    display: flex;
-    justify-content: center;
-    align-items: center  ;
+    transition: all 0.3s ease-in-out;
+}
+
+.project:hover{
+    box-shadow: 0px 0px 5px 1px #faf4f4;
 }
 
 .project:hover .project-content{
-    visibility: visible;
-    opacity: 1; 
+    opacity: 1;
 }
+
+.project:hover .project-image{
+    opacity: 0.3;
+    background-color: #696767;
+}
+
+
 
 
 
