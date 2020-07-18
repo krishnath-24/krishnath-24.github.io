@@ -4,24 +4,19 @@ const usersController = require('../controllers/users_controller');
 const signupController = require('../controllers/sign_up_controller');
 const signinController = require('../controllers/sign_in_controller');
 
-router.get('/sign-up',signupController.signup);
-
-router.post('/signup',function(req, res){
-    res.send("Successfully signed up!");
-});
+router.get('/sign-up',usersController.signUp);
+router.get('/sign-in',usersController.signIn);
 
 
-router.get('/sign-in',signinController.signin);
+router.post('/sign-up',usersController.profile);
 
 router.post('/sign-in',usersController.profile);
-
-router.get('/profile',usersController.profile);
-
 
 
 router.get('/friends',(req,res)=>{
     return res.send('<h2>Friends here!</h2>');
 });
+
 router.use('/post',require('./posts'));
 
 module.exports = router;
