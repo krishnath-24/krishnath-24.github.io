@@ -1,6 +1,4 @@
 const User = require('../models/user');
-const cookieParser = require('cookie-parser');
-const { readyState } = require('../config/mongoose');
 
 
 // render the sign up page
@@ -20,7 +18,6 @@ module.exports.signIn = function(req, res){
 
 // get the sign up data
 module.exports.create = function(req, res){
-    // TODO later
 
     console.log(req.body);
 
@@ -36,6 +33,7 @@ module.exports.create = function(req, res){
             User.create(req.body,(err, user)=>{
                 
                 if(err) {console.log(err); return;}
+                
 
                 res.redirect('/users/sign-in');
             });
@@ -50,6 +48,8 @@ module.exports.create = function(req, res){
 //sign in and create a session for the user
 module.exports.createSession = function(req, res) {
     // TODO later
+    
+    return res.redirect('/users/profile');
 }
 
 
