@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music Player</title>
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <link rel="stylesheet" href="./stylesheets/artist.css">
+    <link rel="stylesheet" href="./stylesheets/home.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;1,100;1,200;1,300;1,400&display=swap" rel="stylesheet">
+    
+</head>
+<body>
+
+    <nav>
+        <ul>
+            <div class="logo-container">
+                <li class="logo" onclick="return show('page1','page2');"><img src="./assets/ninjastudio.jpg" alt=""></li>
+                <li><h2 class="title" style="cursor: pointer;" onclick="return show('page1','page2');">Home</h5></li>
+            </div>
+               
+            <div class="items">
+                <li class="search-icon">
+                    <input type="search" placeholder="Search">
+                    <span class="fas fa-search icon" ></span>
+                </li>
+                <li><span class="fas fa-bell"></span></li>
+                <li class="user-icon"><span class="fa fa-user"></span></li>
+                <li class="menu-icon"><span class="fa fa-bars"></span></li>
+            </div>
+        </ul>
+    </nav>
+    <div id="page1">
+        <div class="carousel container">
+
+            <div class="carousel-image image1" >
+    
+                <img src="https://a10.gaanacdn.com/gn_img/showcase/XzVWRLKdqR/zVWRJ71Wdq/size_m_1594353799.webp" alt="">
+            </div>
+            <div class="carousel-image image2" >
+    
+                <img src="https://a10.gaanacdn.com/gn_img/showcase/0wrb4qNKLg/0wrb45AKLg/size_m_1594400153.webp" alt="">
+            </div>
+            <div class="carousel-image image3" >
+    
+                <img src="https://a10.gaanacdn.com/gn_img/showcase/2lV3dl13Rg/lV3dl0o3Rg/size_m_1594401018.webp" alt="">
+            </div>
+        </div>
+    
+        <main>
+            
+        
+            <div class="songs-container container">
+    
+                <div class="song-cards">
+                    
+                    <h2 class="title">Latest Release</h2>
+    
+                    <div class="cards-container">
+                        
+                        <div class="card">
+    
+                            <img class="card-image" src="https://a10.gaanacdn.com/gn_pl_img/playlists/oAJbDlbnL8/JbD7vBgXWn/size_m_1583143438.webp" alt="">
+                            <div class="card-details">
+    
+                                <span class="card-icon"><i class="fa fa-ellipsis-h"></i> </span>
+                                <p class="card-info"><strong><span>Martin</span> </strong><span>4:44</span></p>
+                                <span>july-11-2020</span>
+                            </div>
+                        </div>
+                        <div class="card">
+    
+                            <img class="card-image" src="https://a10.gaanacdn.com/gn_pl_img/playlists/oAJbDlbnL8/JbD7vBgXWn/size_m_1583143438.webp" alt="">
+                            <div class="card-details">
+    
+                                <span class="card-icon"><i class="fa fa-ellipsis-h"></i> </span>
+                                <p class="card-info"><strong><span>Martin</span> </strong><span>4:44</span></p>
+                                <span>july-11-2020</span>
+                            </div>
+                        </div>
+                        <div class="card">
+    
+                            <img class="card-image" src="https://a10.gaanacdn.com/gn_pl_img/playlists/oAJbDlbnL8/JbD7vBgXWn/size_m_1583143438.webp" alt="">
+                            <div class="card-details">
+    
+                                <span class="card-icon"><i class="fa fa-ellipsis-h"></i> </span>
+                                <p class="card-info"><strong><span>Martin</span> </strong><span>4:44</span></p>
+                                <span>july-11-2020</span>
+                            </div>
+                        </div>
+                        <div class="card">
+    
+                            <img class="card-image" src="https://a10.gaanacdn.com/gn_pl_img/playlists/oAJbDlbnL8/JbD7vBgXWn/size_m_1583143438.webp" alt="">
+                            <div class="card-details">
+    
+                                <span class="card-icon"><i class="fa fa-ellipsis-h"></i> </span>
+                                <p class="card-info"><strong><span>Martin</span> </strong><span>4:44</span></p>
+                                <span>july-11-2020</span>
+                            </div>
+                        </div>
+                    </div>
+    
+                </div>
+    
+                <h2 class="title" >Popular Artists</h2>
+    
+                <div class="popular-artists-container container">
+    
+                    <div class="popular-artist">
+                        <img src="https://a10.gaanacdn.com/gn_pl_img/playlists/MmqK5EKwRO/mqK562gz3w/size_m_1582963271.webp" alt="">
+                        <span class="popular-artist-name">David gupta</span>
+                        <i class="fa fa-play popular-artist-play-button" onclick="return show('page2','page1');"></i>
+                    </div>
+                    
+                    <div class="popular-artist">
+                        <img src="https://a10.gaanacdn.com/gn_pl_img/playlists/XYybzNrb2g/YybzZyx9b2/size_m_1582998794.webp" alt="">
+                        <span class="popular-artist-name">Enrique Iyyer</span>
+                        <i class="fa fa-play popular-artist-play-button" onclick="return show('page2','page1');"></i>
+                    </div>
+                    
+                    <div class="popular-artist">
+                        <img src="https://a10.gaanacdn.com/gn_pl_img/playlists/Rz4W8vKxD5/z4W882rpWx/size_m_1587110833.webp" alt="">
+                        <span class="popular-artist-name">Eminem pandey</span>
+                        <i class="fa fa-play popular-artist-play-button" onclick="return show('page2','page1');"></i>
+                    </div>
+                    
+                    <div class="popular-artist">
+                        <img src="https://a10.gaanacdn.com/gn_pl_img/playlists/D0PKLqr3Gl/0PKLjDk6WG/size_m_1587110624.webp" alt="">
+                        <span class="popular-artist-name">Ed shreeram</span>
+                        <i class="fa fa-play popular-artist-play-button" onclick="return show('page2','page1');"></i>
+                    </div>
+                    
+                    <div class="popular-artist">
+                        <img src="https://a10.gaanacdn.com/gn_pl_img/playlists/6Zxb27K9wN/Zxb2DNLO39/size_m_1587710736.webp" alt="">
+                        <span class="popular-artist-name">Calvin Hareesh</span>
+                        <i class="fa fa-play popular-artist-play-button" onclick="return show('page2','page1');"></i>
+                    </div>
+                    
+                    <div class="popular-artist">
+                        <img src="https://a10.gaanacdn.com/gn_pl_img/playlists/koMWQBbqLE/oMWQBaYAbq/size_m_1578034715.webp" alt="">
+                        <span class="popular-artist-name">Justin Bhadoriya</span>
+                        <i class="fa fa-play popular-artist-play-button" ></i>
+                    </div>
+                </div>
+    
+    
+                <h2 class="title">Radio Station</h2>
+    
+                <div class="radio-station-container container">
+    
+                    <div class="radio-station">
+                        <img class="radio-station-image" src="https://a10.gaanacdn.com/gn_img/radiotheme/a7LWBaz3zX/a7LWBBDWzX/size_m_1522142458.webp" alt="">
+                        <i class="fa fa-play radio-station-play-button" ></i>
+                    </div>
+                    <div class="radio-station">
+                        <img class="radio-station-image" src="https://a10.gaanacdn.com/gn_img/radiotheme/a7LWBkzbzX/a7LWBwkbzX/size_m_1567583318.webp" alt="">
+                        <i class="fa fa-play radio-station-play-button"></i>
+                    </div>
+                    <div class="radio-station">
+                        <img class="radio-station-image" src="https://a10.gaanacdn.com/gn_img/radio/XzVWRLKdqR/XzVWRLKdqR/size_m_1525013594.webp" alt="">
+                        <i class="fa fa-play radio-station-play-button"></i>
+                    </div>
+                    <div class="radio-station">
+                        <img class="radio-station-image" src="https://a10.gaanacdn.com/gn_img/radiotheme/21GWwrR3pk/21GWwe4Kpk/size_m_1585648479.webp" alt="">
+                        <i class="fa fa-play radio-station-play-button"></i>
+                    </div>
+                    <div class="radio-station">
+                        <img class="radio-station-image" src="https://a10.gaanacdn.com/gn_img/radiotheme/DwPKOxB3qV/DwPKOwkKqV/size_m_1567171150.webp" alt="">
+                        <i class="fa fa-play radio-station-play-button"></i>
+                    </div>
+                    <div class="radio-station">
+                        <img class="radio-station-image" src="https://a10.gaanacdn.com/gn_img/radiotheme/jBr3gLyWR1/jBr3g09WR1/size_m_1514444695.webp" alt="">
+                        <i  class="fa fa-play radio-station-play-button"></i>
+                    </div>
+                    <div class="radio-station">
+                        <img class="radio-station-image" src="https://a10.gaanacdn.com/gn_img/radiotheme/qaLKY623pO/qaLKYgwWpO/size_m_1514444705.webp" alt="">
+                        <i class="fa fa-play radio-station-play-button"></i>
+                    </div>
+                    
+                </div>
+    
+                <div class="radio-theme-container container">
+                    <div class="radio-theme">
+                        <img class="radio-theme-image" src="https://img.wynk.in/unsafe/720x251/filters:no_upscale():format(webp)/https://s3-ap-south-1.amazonaws.com/wynk-music-cms/music/Romance-Top-40--International-720x251.png" alt="">
+                        <span class="radio-theme-name">Top Romance</span>
+                    </div>
+                    <div class="radio-theme">
+                        <img class="radio-theme-image" src="https://img.wynk.in/unsafe/720x251/filters:no_upscale():format(webp)/https://s3-ap-south-1.amazonaws.com/wynk-music-cms/music/All-time-Favourites-1440x502.png" alt="">
+                        <span class="radio-theme-name">Top Romance</span>
+                    </div><div class="radio-theme">
+                        <img class="radio-theme-image" src="https://img.wynk.in/unsafe/720x251/filters:no_upscale():format(webp)/http://s3-ap-south-1.amazonaws.com/wynk-music-cms/music/arjunspotlighthindi.png" alt="">
+                        <span class="radio-theme-name">Top Romance</span>
+                    </div>
+                </div>
+    
+    
+                <h2 class="title">Latest English Songs</h2>
+    
+                <div class="latest-songs-container container">
+    
+                    <div class="latest-song">
+                        <img src="https://a10.gaanacdn.com/images/albums/52/1839852/crop_175x175_1839852.jpg" alt="" class="latest-song-image">
+                        <p class="latest-song-name">Shape of you</p>
+                        <p class="latest-song-artist">Ed shreeram</p>
+                    </div>
+    
+                    <div class="latest-song">
+                        <img src="https://a10.gaanacdn.com/images/albums/75/1734375/crop_175x175_1734375.jpg" alt="" class="latest-song-image">
+                        <p class="latest-song-name">Encore</p>
+                        <p class="latest-song-artist">Dj Snake</p>
+                    </div>
+                    <div class="latest-song">
+                        <img src="https://a10.gaanacdn.com/images/albums/84/2236684/crop_175x175_2236684.jpg" alt="" class="latest-song-image">
+                        <p class="latest-song-name">Taki Taki</p>
+                        <p class="latest-song-artist">Dj Snake</p>
+                    </div>
+                    <div class="latest-song">
+                        <img src="https://a10.gaanacdn.com/images/albums/72/2657072/crop_175x175_2657072.jpg" alt="" class="latest-song-image">
+                        <p class="latest-song-name">Senorita</p>
+                        <p class="latest-song-artist">Shawn Mendes</p>
+                    </div>
+                    <div class="latest-song">
+                        <img src="https://a10.gaanacdn.com/images/albums/84/2364284/crop_175x175_2364284.jpg" alt="" class="latest-song-image">
+                        <p class="latest-song-name">Believer</p>
+                        <p class="latest-song-artist">Imagine Dragons</p>
+                    </div>
+    
+                </div>
+    
+                <h2 class="title">Latest Hindi Songs</h2>
+    
+                <div class="latest-songs-container container">
+    
+                    <div class="latest-song">
+                        <img src="https://a10.gaanacdn.com/images/albums/20/3285020/crop_175x175_3285020.jpg" alt="" class="latest-song-image">
+                        <p class="latest-song-name">Dil Bechara</p>
+                        <p class="latest-song-artist">A.R Rehman</p>
+                    </div>
+    
+                    <div class="latest-song">
+                        <img src="https://a10.gaanacdn.com/gn_img/albums/Rz4W8evbxD/z4W8YP86bx/size_m_1593776965.webp" alt="" class="latest-song-image">
+                        <p class="latest-song-name">Deewana</p>
+                        <p class="latest-song-artist">Akhil</p>
+                    </div>
+                    <div class="latest-song">
+                        <img src="https://a10.gaanacdn.com/images/albums/56/3252656/crop_175x175_3252656.jpg" alt="" class="latest-song-image">
+                        <p class="latest-song-name">Kasoor</p>
+                        <p class="latest-song-artist">Prateek Kuhad</p>
+                    </div>
+                    <div class="latest-song">
+                        <img src="https://a10.gaanacdn.com/images/albums/51/3260951/crop_175x175_3260951.jpg" alt="" class="latest-song-image">
+                        <p class="latest-song-name">Fursat Hai Aaj Bhi</p>
+                        <p class="latest-song-artist">Arjun Kanungo</p>
+                    </div>
+                    <div class="latest-song">
+                        <img src="https://a10.gaanacdn.com/gn_img/albums/7rVW1Rbk56/rVW1Y0onWk/size_m_1593954734.webp" alt="" class="latest-song-image">
+                        <p class="latest-song-name">Kyon</p>
+                        <p class="latest-song-artist">B Praak</p>
+                    </div>
+    
+                </div>
+    
+                
+    
+    
+    
+            </div>
+            
+            <aside class="playlist">
+    
+                <h2 class="title">Queue</h2>
+    
+                <ol start="1" class="playlist-items">
+                    <li class="list-item d-flex playlist-item">
+                        <div class="d-flex">
+                            <img class="playlist-image" src="https://a10.gaanacdn.com/images/albums/22/114422/crop_55x55_114422.jpg" alt="">
+                            <div class="playlist-song-details d-flex fd-c">
+                                <p class="playlist-song-title d-inline">Bhaag Milkha</p>
+                                <p class="playlist-song-singer d-inline text-muted ">Arif lohar</p>
+                            </div>
+                        </div>
+                        <i class="fa fa-heart favourite-song"></i>
+                    </li>
+                    <li class="list-item d-flex playlist-item">
+                        <div class="d-flex">
+                            <img class="playlist-image" src="https://a10.gaanacdn.com/images/albums/16/3288916/crop_55x55_3288916.jpg" alt="">
+                            <div class="playlist-song-details d-flex fd-c">
+                                <p class="playlist-song-title d-inline">Ek Tarfa</p>
+                                <p class="playlist-song-singer d-inline text-muted ">Darshan Rawal</p>
+                            </div>
+                        </div>
+                        <i class="fa fa-heart favourite-song"></i>
+                    </li> <li class="list-item d-flex playlist-item">
+                        <div class="d-flex">
+                            <img class="playlist-image" src="https://a10.gaanacdn.com/images/albums/6/3298106/crop_55x55_3298106.jpg" alt="">
+                            <div class="playlist-song-details d-flex fd-c">
+                                <p class="playlist-song-title d-inline">Pop Star</p>
+                                <p class="playlist-song-singer d-inline text-muted ">Dj Khalid</p>
+                            </div>
+                        </div>
+                        <i class="fa fa-heart favourite-song"></i>
+                    </li> <li class="list-item d-flex playlist-item">
+                        <div class="d-flex">
+                            <img class="playlist-image" src="https://a10.gaanacdn.com/images/albums/26/3277626/crop_55x55_1593954734_3277626.jpg" alt="">
+                            <div class="playlist-song-details d-flex fd-c">
+                                <p class="playlist-song-title d-inline">Kyon</p>
+                                <p class="playlist-song-singer d-inline text-muted ">B Praak</p>
+                            </div>
+                        </div>
+                        <i class="fa fa-heart favourite-song"></i>
+                    </li> <li class="list-item d-flex playlist-item">
+                        <div class="d-flex">
+                            <img class="playlist-image" src="https://a10.gaanacdn.com/images/albums/26/3277626/crop_55x55_1593954734_3277627.jpg" alt="">
+                            <div class="playlist-song-details d-flex fd-c">
+                                <p class="playlist-song-title d-inline">Deewana</p>
+                                <p class="playlist-song-singer d-inline text-muted ">Akhil</p>
+                            </div>
+                        </div>
+                        <i class="fa fa-heart favourite-song"></i>
+                    </li> <li class="list-item d-flex playlist-item">
+                        <div class="d-flex">
+                            <img class="playlist-image" src="https://a10.gaanacdn.com/images/albums/7/270707/crop_175x175_270707.jpg" alt="">
+                            <div class="playlist-song-details d-flex fd-c">
+                                <p class="playlist-song-title d-inline">Firestone</p>
+                                <p class="playlist-song-singer d-inline text-muted ">Kygo</p>
+                            </div>
+                        </div>
+                        <i class="fa fa-heart favourite-song"></i>
+                    </li> <li class="list-item d-flex playlist-item">
+                        <div class="d-flex">
+                            <img class="playlist-image" src="https://a10.gaanacdn.com/images/albums/29/3298929/crop_55x55_1594980327_3298929.jpg" alt="">
+                            <div class="playlist-song-details d-flex fd-c">
+                                <p class="playlist-song-title d-inline">Sanju</p>
+                                <p class="playlist-song-singer d-inline text-muted ">Sindhu Moose Waala</p>
+                            </div>
+                        </div>
+                        <i class="fa fa-heart favourite-song"></i>
+                    </li>
+                    </li> <li class="list-item d-flex playlist-item">
+                        <div class="d-flex">
+                            <img class="playlist-image" src="https://a10.gaanacdn.com/images/albums/53/1989953/crop_175x175_1989953.jpg" alt="">
+                            <div class="playlist-song-details d-flex fd-c">
+                                <p class="playlist-song-title d-inline">Dusk Till Dawn</p>
+                                <p class="playlist-song-singer d-inline text-muted ">Zayn</p>
+                            </div>
+                        </div>
+                        <i class="fa fa-heart favourite-song"></i>
+                    </li>
+                    </li> <li class="list-item d-flex playlist-item">
+                        <div class="d-flex">
+                            <img class="playlist-image" src="https://a10.gaanacdn.com/images/albums/22/114422/crop_55x55_114422.jpg" alt="">
+                            <div class="playlist-song-details d-flex fd-c">
+                                <p class="playlist-song-title d-inline">Bhaag Milkha</p>
+                                <p class="playlist-song-singer d-inline text-muted ">Arif lohar</p>
+                            </div>
+                        </div>
+                        <i class="fa fa-heart favourite-song"></i>
+                    </li>
+    
+                </ol>
+        
+            </aside>
+            
+    
+        </main>
+        
+    </div>
+
+
+    <div id="page2" style="display:none;">
+
+        <div class="main-container">
+
+            <div class="artist-container d-flex">
+                <img class="artist-image" src="https://akns-images.eonline.com/eol_images/Entire_Site/20171119/rs_1024x576-171219083111-1024.eminem.121917.jpg?fit=around|1024:auto&output-quality=90&crop=1024:auto;center,top" alt="">
+                <div class="artist-details ">
+                    <div class="artist-name">
+                        <h2 >Eminem pandey</h2>
+                        <span class="text-muted">40m <em>followers</em></span>
+                    </div>
+                    <h5 class="text-muted">Rapper</h5>
+                    <p class="artist-summary text-muted">Marshall Bruce Mathers III (born October 17, 1972), known professionally as Eminem is an American rapper, record producer.Eminem's global success and acclaimed works are widely regarded as having broken racial barriers for the acceptance of white rappers in popular music. While much of his transgressive work during the early 2000s made him hugely controversial, he came to be a representation of popular angst and the American underclass.</p>
+                    <button>Play All</button> <span>Follow</span>
+                    <p class="text-muted">500 Tracks | 200 Albums</p>
+                </div>
+            </div>
+            <div class="queue-container">
+                <ol start="1" class="playlist-items">
+                    <li class="list-item d-flex queue-item">
+                        <div class="d-flex">
+                            <img class="playlist-image" src="https://a10.gaanacdn.com/images/albums/22/114422/crop_55x55_114422.jpg" alt="">
+                            <div class="playlist-song-details d-flex fd-c">
+                                <p class="playlist-song-title d-inline">Bhaag Milkha</p>
+                                <p class="playlist-song-singer d-inline text-muted ">Arif lohar</p>
+                            </div>
+                        </div>
+                        <div>
+                            <i class="fa fa-plus"></i>
+                            <i class="fa fa-heart favourite-song"></i>
+                        </div>
+                    </li>
+                    <li class="list-item d-flex queue-item">
+                        <div class="d-flex">
+                            <img class="playlist-image" src="https://a10.gaanacdn.com/images/albums/16/3288916/crop_55x55_3288916.jpg" alt="">
+                            <div class="playlist-song-details d-flex fd-c">
+                                <p class="playlist-song-title d-inline">Ek Tarfa</p>
+                                <p class="playlist-song-singer d-inline text-muted ">Darshan Rawal</p>
+                            </div>
+                        </div>
+                        <div>
+                            <i class="fa fa-plus"></i>
+                            <i class="fa fa-heart favourite-song"></i>
+                        </div>
+                    </li>
+                    <li class="list-item d-flex queue-item">
+                        <div class="d-flex">
+                            <img class="playlist-image" src="https://a10.gaanacdn.com/images/albums/6/3298106/crop_55x55_3298106.jpg" alt="">
+                            <div class="playlist-song-details d-flex fd-c">
+                                <p class="playlist-song-title d-inline">Pop Star</p>
+                                <p class="playlist-song-singer d-inline text-muted ">Dj Khalid</p>
+                            </div>
+                        </div>
+                        <div>
+                            <i class="fa fa-plus"></i>
+                            <i class="fa fa-heart favourite-song"></i>
+                        </div>
+                    </li> 
+                    <li class="list-item d-flex queue-item">
+                        <div class="d-flex">
+                            <img class="playlist-image" src="https://a10.gaanacdn.com/images/albums/26/3277626/crop_55x55_1593954734_3277626.jpg" alt="">
+                            <div class="playlist-song-details d-flex fd-c">
+                                <p class="playlist-song-title d-inline">Kyon</p>
+                                <p class="playlist-song-singer d-inline text-muted ">B Praak</p>
+                            </div>
+                        </div>
+                        <div>
+                            <i class="fa fa-plus"></i>
+                            <i class="fa fa-heart favourite-song"></i>
+                        </div>
+                    </li> 
+                    <li class="list-item d-flex queue-item">
+                        <div class="d-flex">
+                            <img class="playlist-image" src="https://a10.gaanacdn.com/images/albums/26/3277626/crop_55x55_1593954734_3277627.jpg" alt="">
+                            <div class="playlist-song-details d-flex fd-c">
+                                <p class="playlist-song-title d-inline">Deewana</p>
+                                <p class="playlist-song-singer d-inline text-muted ">Akhil</p>
+                            </div>
+                        </div>
+                        <div>
+                            <i class="fa fa-plus"></i>
+                            <i class="fa fa-heart favourite-song"></i>
+                        </div>
+                    </li> 
+                    <li class="list-item d-flex queue-item">
+                        <div class="d-flex">
+                            <img class="playlist-image" src="https://a10.gaanacdn.com/images/albums/7/270707/crop_175x175_270707.jpg" alt="">
+                            <div class="playlist-song-details d-flex fd-c">
+                                <p class="playlist-song-title d-inline">Firestone</p>
+                                <p class="playlist-song-singer d-inline text-muted ">Kygo</p>
+                            </div>
+                        </div>
+                        <div>
+                            <i class="fa fa-plus"></i>
+                            <i class="fa fa-heart favourite-song"></i>
+                        </div>
+                    </li> 
+                    <li class="list-item d-flex queue-item">
+                        <div class="d-flex">
+                            <img class="playlist-image" src="https://a10.gaanacdn.com/images/albums/29/3298929/crop_55x55_1594980327_3298929.jpg" alt="">
+                            <div class="playlist-song-details d-flex fd-c">
+                                <p class="playlist-song-title d-inline">Sanju</p>
+                                <p class="playlist-song-singer d-inline text-muted ">Sindhu Moose Waala</p>
+                            </div>
+                        </div>
+                        <div>
+                            <i class="fa fa-plus"></i>
+                            <i class="fa fa-heart favourite-song"></i>
+                        </div>
+                    </li>
+                    </li> 
+                    <li class="list-item d-flex queue-item">
+                        <div class="d-flex">
+                            <img class="playlist-image" src="https://a10.gaanacdn.com/images/albums/53/1989953/crop_175x175_1989953.jpg" alt="">
+                            <div class="playlist-song-details d-flex fd-c">
+                                <p class="playlist-song-title d-inline">Dust In Lawn</p>
+                                <p class="playlist-song-singer d-inline text-muted ">Zayn</p>
+                            </div>
+                        </div>
+                        <div>
+                            <i class="fa fa-plus"></i>
+                            <i class="fa fa-heart favourite-song"></i>
+                        </div>
+                    </li>
+                    </li> <li class="list-item d-flex queue-item">
+                        <div class="d-flex">
+                            <img class="playlist-image" src="https://a10.gaanacdn.com/images/albums/22/114422/crop_55x55_114422.jpg" alt="">
+                            <div class="playlist-song-details d-flex fd-c">
+                                <p class="playlist-song-title d-inline">Bhaag bhai bhaag</p>
+                                <p class="playlist-song-singer d-inline text-muted ">Arif lohar</p>
+                            </div>
+                        </div>
+                        <div>
+                            <i class="fa fa-plus"></i>
+                            <i class="fa fa-heart favourite-song"></i>
+                        </div>
+                    </li>
+    
+                </ol>
+        
+            </div>
+        </div>
+
+        <div class="side-container">
+            <h2 class="title">Similar Artists</h2>
+            <div class="similar-artist-container">
+                <div class="cards-container">
+                        
+                    <div class="card">
+
+                        <img class="card-image" src="https://a10.gaanacdn.com/gn_pl_img/playlists/oAJbDlbnL8/JbD7vBgXWn/size_m_1583143438.webp" alt="">
+                        <div class="card-details">
+
+                            <span class="card-icon"><i class="fa fa-ellipsis-h"></i> </span>
+                            <p class="card-info"><strong><span>Martin</span> </strong><span>4:44</span></p>
+                            <span>Dj wala</span>
+                        </div>
+                    </div>
+                    <div class="card">
+
+                        <img class="card-image" src="https://a10.gaanacdn.com/gn_pl_img/playlists/oAJbDlbnL8/JbD7vBgXWn/size_m_1583143438.webp" alt="">
+                        <div class="card-details">
+
+                            <span class="card-icon"><i class="fa fa-ellipsis-h"></i> </span>
+                            <p class="card-info"><strong><span>Martin</span> </strong><span>4:44</span></p>
+                            <span>Dj wala</span>
+                        </div>
+                    </div>
+                    <div class="card">
+
+                        <img class="card-image" src="https://a10.gaanacdn.com/gn_pl_img/playlists/oAJbDlbnL8/JbD7vBgXWn/size_m_1583143438.webp" alt="">
+                        <div class="card-details">
+
+                            <span class="card-icon"><i class="fa fa-ellipsis-h"></i> </span>
+                            <p class="card-info"><strong><span>Martin</span> </strong><span>4:44</span></p>
+                            <span>Dj wala</span>
+                        </div>
+                    </div>
+                    <div class="card">
+
+                        <img class="card-image" src="https://a10.gaanacdn.com/gn_pl_img/playlists/oAJbDlbnL8/JbD7vBgXWn/size_m_1583143438.webp" alt="">
+                        <div class="card-details">
+
+                            <span class="card-icon"><i class="fa fa-ellipsis-h"></i> </span>
+                            <p class="card-info"><strong><span>Martin</span> </strong><span>4:44</span></p>
+                            <span>Dj wala</span>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+            <div class="recently-played-container">
+                
+                <h2>Recently Played</h2>
+                <ul class="recently-played">
+                     <li class="list-item d-flex playlist-item">
+                        <div class="d-flex">
+                            <img class="playlist-image" src="https://a10.gaanacdn.com/images/albums/29/3298929/crop_55x55_1594980327_3298929.jpg" alt="">
+                            <div class="playlist-song-details d-flex fd-c">
+                                <p class="playlist-song-title d-inline">Sanju</p>
+                                <p class="playlist-song-singer d-inline text-muted ">Sindhu Moose Waala</p>
+                            </div>
+                        </div>
+                        <i class="fa fa-heart favourite-song"></i>
+                    </li>
+                    <li class="list-item d-flex playlist-item">
+                        <div class="d-flex">
+                            <img class="playlist-image" src="https://a10.gaanacdn.com/images/albums/29/3298929/crop_55x55_1594980327_3298929.jpg" alt="">
+                            <div class="playlist-song-details d-flex fd-c">
+                                <p class="playlist-song-title d-inline">Sanju</p>
+                                <p class="playlist-song-singer d-inline text-muted ">Sindhu Moose Waala</p>
+                            </div>
+                        </div>
+                        <i class="fa fa-heart favourite-song"></i>
+                    </li>
+
+                    <li class="list-item d-flex playlist-item">
+                        <div class="d-flex">
+                            <img class="playlist-image" src="https://a10.gaanacdn.com/images/albums/29/3298929/crop_55x55_1594980327_3298929.jpg" alt="">
+                            <div class="playlist-song-details d-flex fd-c">
+                                <p class="playlist-song-title d-inline">Sanju</p>
+                                <p class="playlist-song-singer d-inline text-muted ">Sindhu Moose Waala</p>
+                            </div>
+                        </div>
+                        <i class="fa fa-heart favourite-song"></i>
+                    </li>
+
+                    <li class="list-item d-flex playlist-item">
+                        <div class="d-flex">
+                            <img class="playlist-image" src="https://a10.gaanacdn.com/images/albums/29/3298929/crop_55x55_1594980327_3298929.jpg" alt="">
+                            <div class="playlist-song-details d-flex fd-c">
+                                <p class="playlist-song-title d-inline">Sanju</p>
+                                <p class="playlist-song-singer d-inline text-muted ">Sindhu Moose Waala</p>
+                            </div>
+                        </div>
+                        <i class="fa fa-heart favourite-song"></i>
+                    </li>
+
+                    <li class="list-item d-flex playlist-item">
+                        <div class="d-flex">
+                            <img class="playlist-image" src="https://a10.gaanacdn.com/images/albums/29/3298929/crop_55x55_1594980327_3298929.jpg" alt="">
+                            <div class="playlist-song-details d-flex fd-c">
+                                <p class="playlist-song-title d-inline">Sanju</p>
+                                <p class="playlist-song-singer d-inline text-muted ">Sindhu Moose Waala</p>
+                            </div>
+                        </div>
+                        <i class="fa fa-heart favourite-song"></i>
+                    </li>
+
+                    <li class="list-item d-flex playlist-item">
+                        <div class="d-flex">
+                            <img class="playlist-image" src="https://a10.gaanacdn.com/images/albums/29/3298929/crop_55x55_1594980327_3298929.jpg" alt="">
+                            <div class="playlist-song-details d-flex fd-c">
+                                <p class="playlist-song-title d-inline">Sanju</p>
+                                <p class="playlist-song-singer d-inline text-muted ">Sindhu Moose Waala</p>
+                            </div>
+                        </div>
+                        <i class="fa fa-heart favourite-song"></i>
+                    </li>
+
+                </ul>
+
+            </div>
+        </div>
+
+
+    </div> 
+
+
+
+    <div class="bottom-music-player media-controls-container">
+        <div class="media-controls-song">
+            <img class="media-controls-image" src="https://a10.gaanacdn.com/images/albums/9/1726709/crop_175x175_1726709.jpg" alt="">
+            <div class="media-controls-song-info">
+                <marquee><span>Closer</span></marquee>
+                <span class="text-muted">The Chainsmokers</span>
+            </div>
+        </div>
+
+        <div class="media-controls">
+            <i class="fa fa-arrow-left" ></i>
+            <i class="fa fa-play"></i>
+            <i class="fa fa-arrow-right"></i>
+
+        </div>
+
+        <div class="media-controls-progress">
+            <span>00:10</span>
+            <input type="range" min="1" max="100" value="10">
+            <span>3:20</span>
+        </div>
+    </div>
+
+
+
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+    <script src="./scripts/index.js"></script>
+</body>
+</html>

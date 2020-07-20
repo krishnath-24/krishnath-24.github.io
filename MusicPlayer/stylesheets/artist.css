@@ -1,0 +1,164 @@
+#page2{
+    margin-left: 50px;
+    display: flex;
+    flex-direction: row;
+    transition: all 0.2s ease-in-out !important;
+}
+.main-container{
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+}
+
+.side-container{
+    width: 40%;
+    margin-left: 50px;
+}
+
+.side-container{
+    display: flex;
+    flex-direction: column;
+}
+
+.artist-container{
+    background-color: #0b1024;
+}
+
+
+.artist-container .artist-image{
+    width: 400px;
+    min-height: 300px;
+}
+.artist-details{
+    margin-left: 20px;
+    margin-right: 10px;
+}
+
+.artist-name{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+.artist-details h5{
+    margin-bottom: 0px;
+    margin-top: 5px;
+}
+
+.artist-details .artist-name h1{
+    margin-top: 10px;
+    margin-bottom: 0px;
+}
+
+.artist-summary{
+    font-size: 12px;
+    text-align: justify;
+    text-justify: inter-word;
+    font-family: 'Poppins', sans-serif;
+}
+
+.artist-details button{
+    background: linear-gradient(to right, #161d3f,#3e51a3);
+    color: white;
+    border: none;
+    font-size: 17px;
+    padding: 5px 10px 5px 10px;
+    border-radius: 1px;
+    width: 110px;
+}
+
+
+/* styling the main queue */
+
+.queue-container .queue-item:nth-child(2n+1) .favourite-song{
+    color: white;
+    
+}
+
+.queue-item{
+    align-items: center;
+    width: 100%;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    padding-right: 15px;
+    background-color: #18214b;
+    transition: 0.2s ease-in-out;
+}
+.queue-item i{
+    margin-left: 10px;
+    opacity: 0.8;   
+}
+
+.queue-item:hover{
+    background-color: #243270;
+}
+
+
+
+
+/* styling the similar artist container */
+
+
+.similar-artist-container .cards-container .card{
+    width: 90%;
+
+}
+.similar-artist-container .cards-container .card img{
+    height: 110px;  
+    width: 110px;
+    
+}
+
+
+/* styling the recently played container */
+
+
+.recently-played{
+    margin-left: 0px;
+    padding-left: 0px;
+    margin-right: 20px;
+
+}
+
+.recently-played .list-item {
+    margin-right: 40px;
+    padding-left: 0px;
+    margin-bottom: 20px;
+}
+
+
+
+
+/* media queries */
+
+@media only screen and (max-width:1000px) {
+    .artist-container{
+        flex-direction: column !important;
+    }
+}
+
+@media only screen and (max-width:800px) {
+    #page2{
+        flex-direction: column  ;
+    }
+    
+
+    .artist-container{
+        flex-direction: column  ;
+    }
+
+    .artist-image{
+        max-width: 300px;
+        max-height: 300px;
+    }
+
+    .side-container{
+        width: 80%;
+    }
+    .similar-artist-container .cards-container{
+        width: 90%;
+    
+    }
+}
