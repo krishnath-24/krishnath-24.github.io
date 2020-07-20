@@ -112,19 +112,20 @@ nav ul div.items .menu-icon{
 main{
 
     display: flex;
+    flex-direction : row;
     flex-wrap: wrap;
     margin-top: 30px;
     padding: 0px 10px 0px 10px;
 }
 
 .songs-container{
-    width: 70%;
+    width: 60%;
     padding-left: 50px;
 }
 
 aside{
-    width: 25%;
     margin-left: 5%;
+    width: 30%;
 }
 
 
@@ -344,17 +345,18 @@ aside{
 
     margin-top: 40px;
     display: flex;
-    justify-content: space-between;
     flex-wrap: wrap;
     margin-bottom: 50px;
+    justify-content: space-between;
 }
 
 .radio-theme{
-    width: 320px;
+    width: 30%;
     height: 200px;
     overflow: hidden;
     border-radius: 5px;
     margin-top: 10px;
+    margin-right: 20px;
 }
 
 .radio-theme-image{
@@ -418,22 +420,61 @@ aside{
 
 }
 
+/* aside playlist styling  */
+
+.playlist-items{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding-left: 0px;
+}
+
+.playlist-item{
+    align-items: center;
+    width: 100%;
+    justify-content: space-between;
+    margin-bottom: 40px;
+}
+
+.playlist-image{
+    border-radius: 5px;
+    margin-right: 10px;
+    margin-left: 10px;
+    padding: 0px;
+}
+
+.playlist-song-details{
+    justify-content: space-evenly;
+}
+
+.playlist-song-details p{
+    margin: 0px;
+    padding: 3px;
+}
+
+.favourite-song{
+    color: red;
+}
 
 
-/* media controls styling */
+
+/* bottom music player media controls styling */
 
 .media-controls-container{
-    padding-left: 10px;
     position: fixed;
     bottom: 0px;
     background-color: #17214e;
-    width: 100%;
+    width: 80%;
     height: 80px;
     margin: 0px;
-    left: 0px;
+    left: 10%;
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: space-between;
+    border-radius: 5px;
+    padding-right: 3px;
+    overflow: hidden;
+    bottom: 1px;
 }
 
 .media-controls-song{
@@ -453,11 +494,6 @@ aside{
     width: 150px;
 }
 
-.text-muted{
-    opacity: 0.8;
-}
-
-
 .media-controls{
     display: flex;
     align-items: center;
@@ -473,6 +509,28 @@ aside{
 }
 
 
+
+/* utility classes */
+
+
+.text-muted{
+    opacity: 0.8;
+}
+
+.d-inline{
+    display: inline;
+}
+
+.h-100{
+    height: 100%;
+}
+
+.d-flex{
+    display: flex;
+}
+.fd-c{
+    flex-direction: column;
+}
 
 
 
@@ -538,6 +596,9 @@ aside{
 
     .container{
         justify-content: start;
+    }
+    aside{
+        width: 90%;
     }
 
 
