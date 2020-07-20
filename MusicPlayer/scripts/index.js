@@ -1,5 +1,5 @@
     
-(function(){
+
     $(document).scroll(function() {
         var y = $(this).scrollTop();
         if (y > 100) {
@@ -22,4 +22,3 @@
       window.scrollTo(0, 0);
       return false;
     }
-})();
