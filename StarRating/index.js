@@ -1,5 +1,4 @@
-
-function Star(el,count,callback) {
+function Star(el,count,callback) { // constructor for the star
 
     this.el = document.getElementById(el);
     this.count = count;
@@ -9,11 +8,9 @@ function Star(el,count,callback) {
     this.bindEventListeners();
 }
 
-
-Star.prototype.init = function() {
+Star.prototype.init = function() {  // initialize the stars, create and append to the container in html
 
     let fragment = document.createDocumentFragment();
-
     for(let i = 1; i <= this.count; i++) {
         let star = document.createElement('i');
         star.className = 'fa fa-star-o';
@@ -23,7 +20,7 @@ Star.prototype.init = function() {
     this.el.appendChild(fragment);
 }
 
-Star.prototype.bindEventListeners = function() {
+Star.prototype.bindEventListeners = function() {  // bind all the event listeners to the star
     
     this.el.addEventListener('mouseover',(event)=>{
         this.fillStars(event.target.dataset.val);
@@ -39,9 +36,7 @@ Star.prototype.bindEventListeners = function() {
     });
 }
 
-
-Star.prototype.fillStars = function(value) {
-
+Star.prototype.fillStars = function(value) { //fill the stars on firing of the event
     var stars = this.el.children;
 
     for(let i = 0; i < value; i++) {
@@ -55,8 +50,7 @@ Star.prototype.fillStars = function(value) {
     }
 }
 
-
-function getStar(value) {
+function getStar(value) { // display the rating when the user clicks on the star
     document.getElementById("span").innerText = value;
 }
 new Star("container",5,getStar);
