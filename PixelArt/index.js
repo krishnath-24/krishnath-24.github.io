@@ -1,5 +1,7 @@
+let board;
 function Board(el, row, col) {
 
+    board = this; 
     this.el = document.querySelector(el);
     this.row = row;
     this.col = col;
@@ -65,6 +67,13 @@ Board.prototype.fillColor = function(event) {
 
 Board.prototype.reset = function(event) {
 
+    let cells = this.el.querySelectorAll('span');
+    
+    cells.forEach(element => {
+        if(!element.classList.contains('color-cell')){
+            element.style.backgroundColor = 'white';
+        }
+    });
 
 }
 
@@ -78,5 +87,10 @@ function getRandomColor() {
   }
 
 new Board("#board",10,10);
+
+
+document.getElementById("reset").addEventListener('click',(event)=>{
+    board.reset();
+})
 
 

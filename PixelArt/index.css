@@ -1,9 +1,18 @@
+body{
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: center;
+    align-items: center ;
+    height: 100vh;
+}
+
 #board{
     display: flex;
     flex-direction: column;
     height: 500px;
     width: 500px;
     border: 1px solid #cccccc;  
+    align-self: center;
 
 }
 
@@ -15,4 +24,5 @@
 .cell{
     flex: 1;
     border: 1px solid #cccccc;  
+    transition: all .2s ease-in-out;
 }
