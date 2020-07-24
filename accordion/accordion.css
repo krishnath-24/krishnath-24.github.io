@@ -1,0 +1,63 @@
+body {
+    background-color: #cccccc;
+    color: darkslateblue;
+    font-family: 'Chelsea Market', cursive;
+}
+
+/* styling the accordions */
+.item-label{
+    background-color: rgb(153, 5, 153);
+    margin-top: 10px;
+    color: #cccccc;
+    cursor : pointer;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+input {
+    display: none;
+}
+
+
+.item-label, .item-text {
+    padding: 14px 20px;
+    transition : all 2s ease-in-out;
+
+}
+
+.item-label {
+    display: block;
+    cursor : pointer;
+    position: relative;
+}
+
+
+.item-label::after{
+    content : "\276F";
+    position: absolute;
+    width: 12px;
+    height: 6px;
+    right: 20px;
+    transition: all 0.4s;
+}
+
+.item-text {
+    display: none;
+    transition: all 2s ease-in-out;
+}
+
+input:checked ~ .item-label{
+    background-color: rgb(90, 3, 90);
+}
+
+
+input:checked ~ .item-text {
+    display: block;
+    transition: all 2s ease-in-out;
+}
+
+input:checked ~ .item-label::after {
+    transform : rotate(90deg);
+    top: 50%;
+    transition : all 1s;
+}
