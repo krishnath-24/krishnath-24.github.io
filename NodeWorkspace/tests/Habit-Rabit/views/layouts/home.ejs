@@ -11,28 +11,32 @@
     
 
 
-    <nav class="navbar navbar-expand-lg navbar-inverse bg-light p-3">
-        <a class="navbar-brand" href="/">Habit-Rabit</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
+  <nav class="navbar navbar-expand-lg bg-light p-3">
+    <a class="navbar-brand" href="/">Habit-Rabit</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="/view-weekly">Weekly</a>
+        </li>
+        
+      </ul>
       
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
-              <a class="nav-link" href="/">Habits <span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/view-weekly">Weekly</a>
-            </li>
-            
-          </ul>
-          
+    </div>
+  </nav>
+
+      <form class=" container mt-5" action="/create-habit" method="POST">
+        <div class="form-group">
+          <h2 class="text-success">Add a Habit</label>
+
+          <input type="text" name="description" class="form-control" id="habit-input" placeholder="eg : Go to gym" required>
         </div>
-      </nav>
-
-    
-
+        
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
 
       <div class="container mt-5 d-flex flex-wrap">
         <% if(habits.length == 0) {%> 
@@ -44,7 +48,7 @@
                     <h5 class="text-primary card-title"><%= habit.description %></h5> 
                     <p class="text-success card-subtitle">done : <%= habit.done %>/7</p>
                     <p class="text-success">Streak : <%= habit.streak %></p>
-                <a class="btn btn-danger" href='/delete-habit: <%= habit._id %>' >Delete</a>
+                <a class="btn btn-danger" href='/delete-habit/<%= habit._id %>' >Delete</a>
 
                 </div>
             </div>
@@ -53,15 +57,6 @@
         <%}%>
         
       </div>
-      <form class=" container mt-5" action="/create-habit" method="POST">
-        <div class="form-group">
-          <h2 class="text-success">Add a Habit</label>
-
-          <input type="text" name="description" class="form-control" id="habit-input" placeholder="eg : Go to gym">
-        </div>
-        
-        <button type="submit" class="btn btn-primary">Submit</button>
-      </form>
 
       <script
   src="https://code.jquery.com/jquery-3.5.1.min.js"

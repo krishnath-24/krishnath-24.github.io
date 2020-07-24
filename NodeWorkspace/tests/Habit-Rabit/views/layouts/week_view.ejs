@@ -1,5 +1,6 @@
-<%const monthNames = ["January", "February", "March", "April", "May", "June",
-"July", "August", "September", "October", "November", "December"];%>
+<%const months = ["January", "February", "March", "April", "May", "June",
+"July", "August", "September", "October", "November", "December"];
+const date = new Date().getDate(); const month = months[(new Date()).getMonth()];%>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -11,57 +12,52 @@
 </head>
 <body>
 
-    <nav class="navbar navbar-expand-lg navbar-light bg-light p-3">
-        <a class="navbar-brand" href="/">Habit-Rabit</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
+  <nav class="navbar navbar-expand-lg bg-light p-3">
+    <a class="navbar-brand" href="/">Habit-Rabit</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="/view-weekly">Weekly</a>
+        </li>
+      </ul>
       
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
-              <a class="nav-link" href="/">Habits <span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/view-weekly">Weekly</a>
-            </li>
-            
-          </ul>
-          
-        </div>
-      </nav>  
+    </div>
+  </nav>
       
       <main>
         <table class="table">
             <thead class="thead-light">
               <tr>
                 <th scope="col">Habit</th>
-                <th scope="col"><%= new Date().getDate()-6 %>/<%=monthNames[new Date().getMonth()]%></th>
-                <th scope="col"><%= new Date().getDate()-5 %>/<%=monthNames[new Date().getMonth()]%></th>
-                <th scope="col"><%= new Date().getDate()-4 %>/<%=monthNames[new Date().getMonth()]%></th>
-                <th scope="col"><%= new Date().getDate()-3 %>/<%=monthNames[new Date().getMonth()]%></th>
-                <th scope="col"><%= new Date().getDate()-2 %>/<%=monthNames[new Date().getMonth()]%></th>
-                <th scope="col"><%= new Date().getDate()-1 %>/<%=monthNames[new Date().getMonth()]%></th>
-                <th scope="col"><%= new Date().getDate() %>/<%=monthNames[new Date().getMonth()]%></th>
+                <th scope="col"><%= date-6 %>/<%=month%></th>
+                <th scope="col"><%= date-5 %>/<%=month%></th>
+                <th scope="col"><%= date-4 %>/<%=month%></th>
+                <th scope="col"><%= date-3 %>/<%=month%></th>
+                <th scope="col"><%= date-2 %>/<%=month%></th>
+                <th scope="col"><%= date-1 %>/<%=month%></th>
+                <th scope="col"><%= date %>/<%=month%></th>
               </tr>
             </thead>
             <tbody>
               
-                <% for(let i of habits) {%>
-
+                <% for(let habit of habits) {%>
                 <tr>
-                    <th scope="row"><%=i.description %></th>
-                    <% for(let j=0;j<i.week.length;j++) {%>
+                    <th scope="row"><%=habit.description %></th>
+                    <% for(let index=0;index<habit.week.length;index++) {%>
                     <td>
                         <div class="dropdown">
                             <button class="btn dropdown-toggle " 
                                 type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <%=i.week[j]%>
+                                <%=habit.week[index]%>
                             </button>
                             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                            <a class="dropdown-item " href="/update/<%=i.id%>/<%=j%>/Done">Done</a>
-                            <a class="dropdown-item " href="/update/<%=i.id%>/<%=j%>/Not Done">Not Done</a>
-                            <a class="dropdown-item" href="/update/<%=i.id%>/<%=j%>/None">None</a>
+                            <a class="dropdown-item " href="/change-status/<%=habit.id%>/<%=index%>/Done">Done</a>
+                            <a class="dropdown-item " href="/change-status/<%=habit.id%>/<%=index%>/Not Done">Not Done</a>
+                            <a class="dropdown-item" href="/change-status/<%=habit.id%>/<%=index%>/None">None</a>
                             </div>
                         </div>
                     </td>
