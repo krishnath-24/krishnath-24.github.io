@@ -18,7 +18,7 @@ npm install
 ```
 npm start or node index.js
 ```
-# Basic-Features
+# Features
 1. Home page contains all the habits, you can add more or delete existing habits.
 2. Weekly page where you can mark the status of the habit for the past seven days.
    

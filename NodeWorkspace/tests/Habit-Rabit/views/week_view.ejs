@@ -12,17 +12,18 @@ const date = new Date().getDate(); const month = months[(new Date()).getMonth()]
 </head>
 <body>
 
-  <nav class="navbar navbar-expand-lg bg-light p-3">
-    <a class="navbar-brand" href="/">Habit-Rabit</a>
+  <nav class="navbar navbar-expand-lg bg-dark p-3">
+    <a class="navbar-brand text-white p-2 mr-5" href="/">Habit-Rabit</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
   
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav mr-auto">
+      <ul class="navbar-nav ">
         <li class="nav-item">
-          <a class="nav-link" href="/view-weekly">Weekly</a>
+          <a class="nav-link text-light " href="/view-weekly">Weekly</a>
         </li>
+        
       </ul>
       
     </div>
@@ -33,20 +34,20 @@ const date = new Date().getDate(); const month = months[(new Date()).getMonth()]
             <thead class="thead-light">
               <tr>
                 <th scope="col">Habit</th>
-                <th scope="col"><%= date-6 %>/<%=month%></th>
-                <th scope="col"><%= date-5 %>/<%=month%></th>
-                <th scope="col"><%= date-4 %>/<%=month%></th>
-                <th scope="col"><%= date-3 %>/<%=month%></th>
-                <th scope="col"><%= date-2 %>/<%=month%></th>
-                <th scope="col"><%= date-1 %>/<%=month%></th>
                 <th scope="col"><%= date %>/<%=month%></th>
+                <th scope="col"><%= date-1 %>/<%=month%></th>
+                <th scope="col"><%= date-2 %>/<%=month%></th>
+                <th scope="col"><%= date-3 %>/<%=month%></th>
+                <th scope="col"><%= date-4 %>/<%=month%></th>
+                <th scope="col"><%= date-5 %>/<%=month%></th>
+                <th scope="col"><%= date-6 %>/<%=month%></th>
               </tr>
             </thead>
             <tbody>
               
                 <% for(let habit of habits) {%>
                 <tr>
-                    <th scope="row"><%=habit.description %></th>
+                    <th scope="row" class="text-primary"><%=habit.description %></th>
                     <% for(let index=0;index<habit.week.length;index++) {%>
                     <td>
                         <div class="dropdown">

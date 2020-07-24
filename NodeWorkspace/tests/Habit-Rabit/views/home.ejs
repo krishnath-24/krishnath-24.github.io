@@ -10,17 +10,17 @@
 
     
 
-
-  <nav class="navbar navbar-expand-lg bg-light p-3">
-    <a class="navbar-brand" href="/">Habit-Rabit</a>
+<!-- nav bar -->
+  <nav class="navbar navbar-expand-lg bg-dark p-3">
+    <a class="navbar-brand text-white p-2 mr-5" href="/">Habit-Rabit</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
   
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav mr-auto">
+      <ul class="navbar-nav ">
         <li class="nav-item">
-          <a class="nav-link" href="/view-weekly">Weekly</a>
+          <a class="nav-link text-light " href="/view-weekly">Weekly</a>
         </li>
         
       </ul>
@@ -28,6 +28,7 @@
     </div>
   </nav>
 
+  <!-- Form to create a new habit -->
       <form class=" container mt-5" action="/create-habit" method="POST">
         <div class="form-group">
           <h2 class="text-success">Add a Habit</label>
@@ -35,12 +36,14 @@
           <input type="text" name="description" class="form-control" id="habit-input" placeholder="eg : Go to gym" required>
         </div>
         
-        <button type="submit" class="btn btn-primary">Submit</button>
+        <button type="submit" class="btn btn-primary">Add</button>
       </form>
 
+
+      <!-- To render all the existing habits  -->
       <div class="container mt-5 d-flex flex-wrap">
         <% if(habits.length == 0) {%> 
-            <p>You have no habits</p>
+            <h3 class="text-danger">You have no habits yet!</p>
         <%} else {%>
         <% for(let habit of habits) {%>
             <div class="card mr-2 mb-3" style="width: 18rem;">
