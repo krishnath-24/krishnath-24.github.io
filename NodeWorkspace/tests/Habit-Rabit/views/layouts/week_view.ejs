@@ -1,0 +1,82 @@
+<%const monthNames = ["January", "February", "March", "April", "May", "June",
+"July", "August", "September", "October", "November", "December"];%>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <title><%= title %></title>
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light p-3">
+        <a class="navbar-brand" href="/">Habit-Rabit</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="/">Habits <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/view-weekly">Weekly</a>
+            </li>
+            
+          </ul>
+          
+        </div>
+      </nav>  
+      
+      <main>
+        <table class="table">
+            <thead class="thead-light">
+              <tr>
+                <th scope="col">Habit</th>
+                <th scope="col"><%= new Date().getDate()-6 %>/<%=monthNames[new Date().getMonth()]%></th>
+                <th scope="col"><%= new Date().getDate()-5 %>/<%=monthNames[new Date().getMonth()]%></th>
+                <th scope="col"><%= new Date().getDate()-4 %>/<%=monthNames[new Date().getMonth()]%></th>
+                <th scope="col"><%= new Date().getDate()-3 %>/<%=monthNames[new Date().getMonth()]%></th>
+                <th scope="col"><%= new Date().getDate()-2 %>/<%=monthNames[new Date().getMonth()]%></th>
+                <th scope="col"><%= new Date().getDate()-1 %>/<%=monthNames[new Date().getMonth()]%></th>
+                <th scope="col"><%= new Date().getDate() %>/<%=monthNames[new Date().getMonth()]%></th>
+              </tr>
+            </thead>
+            <tbody>
+              
+                <% for(let i of habits) {%>
+
+                <tr>
+                    <th scope="row"><%=i.description %></th>
+                    <% for(let j=0;j<i.week.length;j++) {%>
+                    <td>
+                        <div class="dropdown">
+                            <button class="btn dropdown-toggle " 
+                                type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <%=i.week[j]%>
+                            </button>
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                            <a class="dropdown-item " href="/update/<%=i.id%>/<%=j%>/Done">Done</a>
+                            <a class="dropdown-item " href="/update/<%=i.id%>/<%=j%>/Not Done">Not Done</a>
+                            <a class="dropdown-item" href="/update/<%=i.id%>/<%=j%>/None">None</a>
+                            </div>
+                        </div>
+                    </td>
+                    <%}%>
+                </tr>
+                <%}%>
+              
+            </tbody>
+        </table>
+          
+        
+    </main>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+
+</body>
+</html>
