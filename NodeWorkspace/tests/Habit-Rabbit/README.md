@@ -1,4 +1,4 @@
-# Habit-Rabit
+# Habit-Rabbit
 A simple habit tracker to keep track of your existing habits and build more positive habits.
 A basic Habit Tracking System. Tech Stack : HTML, CSS, JS, Node.js
 
