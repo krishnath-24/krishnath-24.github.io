@@ -48,7 +48,10 @@ module.exports.changeStatus = async (req,res)=>{
             }
         }
 
+        // update the maxStreak
         maxStreak = Math.max(maxStreak,streakTillNow);
+
+        // update the habit's fields
         habit.done = done;
         habit.streak = maxStreak;
 

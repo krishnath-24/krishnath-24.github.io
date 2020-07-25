@@ -1,3 +1,4 @@
+<!-- define the months and the current date -->
 <%const months = ["January", "February", "March", "April", "May", "June",
 "July", "August", "September", "October", "November", "December"];
 const date = new Date().getDate(); const month = months[(new Date()).getMonth()];%>
@@ -12,6 +13,7 @@ const date = new Date().getDate(); const month = months[(new Date()).getMonth()]
 </head>
 <body>
 
+  <!-- Bootstrap Navbar -->
   <nav class="navbar navbar-expand-lg bg-dark p-3">
     <a class="navbar-brand text-white p-2 mr-5" href="/">Habit-Rabit</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -29,9 +31,11 @@ const date = new Date().getDate(); const month = months[(new Date()).getMonth()]
     </div>
   </nav>
       
+  <!-- Main container -->
       <main>
         <table class="table">
             <thead class="thead-light">
+              <!-- Define a row for dates -->
               <tr>
                 <th scope="col">Habit</th>
                 <th scope="col"><%= date %>/<%=month%></th>
@@ -44,11 +48,11 @@ const date = new Date().getDate(); const month = months[(new Date()).getMonth()]
               </tr>
             </thead>
             <tbody>
-              
+              <!-- Render the habits -->
                 <% for(let habit of habits) {%>
                 <tr>
                     <th scope="row" class="text-primary"><%=habit.description %></th>
-                    <% for(let index=0;index<habit.week.length;index++) {%>
+                    <% for(let index=0; index < habit.week.length; index++) {%>
                     <td>
                         <div class="dropdown">
                             <button class="btn dropdown-toggle " 

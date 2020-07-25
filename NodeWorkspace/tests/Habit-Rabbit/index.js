@@ -1,19 +1,19 @@
 // require all the modules
 const express =  require('express');
 const app = express();
-const port = process.env.port || 3000;
+const port = process.env.port || 3000; // define the port
 const bodyParser = require('body-parser');
 
 // set the view engine to render ejs files
 app.set('view engine','ejs');
 
-// use the views folder
+// use the assets folder
 app.use(express.static('assets'));
 
 //use the body parser to parse form data
 app.use(bodyParser.urlencoded({extended:true}));
 
-// make db connectiun
+// make db connection
 const db = require('./config/mongoose');
 
 // require the data model
