@@ -2,7 +2,7 @@
 const mongoose = require('mongoose');
 
 // connect to database
-mongoose.connect('mongodb://localhost:27017/habit_db');
+mongoose.connect('mongodb+srv://testuser:12345@cluster0-dwzdm.mongodb.net/habit_db?retryWrites=true&w=majority');
 
 
 // get connection status
