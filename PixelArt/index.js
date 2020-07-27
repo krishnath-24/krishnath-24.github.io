@@ -69,7 +69,7 @@ Board.prototype.reset = function(event) {
 
     let cells = this.el.querySelectorAll('span');
     
-    cells.forEach(element => {
+    cells.forEach(  element => {
         if(!element.classList.contains('color-cell')){
             element.style.backgroundColor = 'white';
         }

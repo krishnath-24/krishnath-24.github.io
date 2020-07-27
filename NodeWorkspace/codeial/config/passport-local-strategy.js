@@ -1,74 +1,48 @@
 const passport = require('passport');
-const LocalStrategy = require('passport-local').Strategy;
 const User = require('../models/user');
+const LocalStrategy = require('passport-local').Strategy;
 
+
+
+// use local Strategy for authentication
 passport.use(new LocalStrategy({
-        usernameField : 'email'
-    },
+    usernameField : 'email',
     function(email, password, done) {
+
         // find a user and establish the identity
+      User.findOne({ email: email }, function (err, user) {
 
-        User.findOne({email : email},(err, user)=>{
+        // if there is some error in finding the user
+        if (err) { return done(err); }
+
+        // if user is not present
+        if (!user || user.password != password) { 
             
-            if(err) return done(err);
-
-            if(!user || user.password != password) {
-
-                console.log('Invalid userame/password');
-                return done(null, false);
-            } 
-            else {
-                console.log("user was fetched "+ user);
-                return done(null, user);
-            }
-        })
+            console.log('Incorrect username/password')
+            return done(null, false); 
+        }
+        
+        return done(null, user);
+      });
     }
-));
+}));
 
-// serialize the user to bind the user id to the cookie
-passport.serializeUser(function(user,done){
+// serialize the user to decide which key is to be kept in the cookies
+passport.serializeUser((user,done)=>{
     done(null,user.id);
 });
 
 
-// deserialize the user from the key in the cookies
-passport.deserializeUser(function(id, done){
+// desrialize the user from the key in the cookie
+
+passport.deserializeUser((id,done)=>{
 
     User.findById(id,(error,user)=>{
         if(error){
-            console.log(error + " while deserializing the user");
+            console.log("error in finding the user --> Passport");
             return done(error);
-        }
+        } 
 
-        done(null,user);
+        return done(null,user);
     });
 });
-
-
-// check if the user is authenticated
-passport.checkAuthenticated = function(req,res,next){
-
-    console.log('checking if req is authenticated')
-    // if user is signed in then pass the req to the next function
-    if(req.isAuthenticated()) return next();
-
-    // if the user is not signed in
-    else res.redirect('/users/sign-in');
-
-}
-
-// set the authenticated user data to pass on to the views
-
-passport.setAuthenticatedUser = function(req,res,next) {
-
-    if(req.isAuthenticated()) {
-        res.locals.user = req.user;
-    }
-    next();
-}
-
-
-
-
-// export passport
-module.exports = passport;
