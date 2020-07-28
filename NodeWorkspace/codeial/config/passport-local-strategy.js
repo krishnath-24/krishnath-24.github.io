@@ -6,7 +6,7 @@ const LocalStrategy = require('passport-local').Strategy;
 
 // use local Strategy for authentication
 passport.use(new LocalStrategy({
-    usernameField : 'email',
+    usernameField : 'email'},
     function(email, password, done) {
 
         // find a user and establish the identity
@@ -25,7 +25,7 @@ passport.use(new LocalStrategy({
         return done(null, user);
       });
     }
-}));
+));
 
 // serialize the user to decide which key is to be kept in the cookies
 passport.serializeUser((user,done)=>{
@@ -33,7 +33,7 @@ passport.serializeUser((user,done)=>{
 });
 
 
-// desrialize the user from the key in the cookie
+// deserialize the user from the key in the cookie
 
 passport.deserializeUser((id,done)=>{
 
@@ -42,7 +42,28 @@ passport.deserializeUser((id,done)=>{
             console.log("error in finding the user --> Passport");
             return done(error);
         } 
-
         return done(null,user);
     });
 });
+
+
+// check if user is authenticated
+passport.checkAuthenticated = (req,res,next)=>{
+    if(req.isAuthenticated()){
+        return next();
+    }
+    return res.redirect('/user/sign-in');
+}
+
+// set authenticated user
+passport.setAuthenticatedUser = (req, res, next)=>{
+
+    if(req.isAuthenticated()) {
+        res.locals.user = req.user;
+    }
+    return next();
+}
+
+
+
+module.exports = passport;
