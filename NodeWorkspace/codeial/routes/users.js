@@ -3,6 +3,7 @@ const express = require('express');
 const router = express.Router();
 
 const userController = require('../controllers/user_controller');
+const postController = require('../controllers/post_controller');
 
 router.get('/profile',passport.checkAuthenticated,userController.profile);
 
@@ -18,5 +19,8 @@ router.post('/create-session',passport.authenticate(
 ),userController.createSession);
 
 router.get('/sign-out',userController.signOut);
+
+
+router.post('/create-post',postController.createPost);
 
 module.exports = router;
