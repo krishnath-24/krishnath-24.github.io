@@ -17,6 +17,9 @@
 
             <h3 class="text-primary"><%=post.content%></h3>
             <p><%= post.user.name %></p>
+            <%   post.comment.forEach(comment => { %>
+                    <p><%= comment.content %></p> <strong><span><%= comment.user.name%></span></strong>
+            <%   }); %>
 
             <form action="/comment/<%= post.id %>/create" method="POST" class="form-inline">
                 
