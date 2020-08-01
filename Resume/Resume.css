@@ -15,6 +15,7 @@ body {
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
+    margin-top: 0px;
 }
     
 /* Skills container */
@@ -251,6 +252,7 @@ section:nth-child(2n + 1) {
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
+    cursor: pointer;
 
 }
 
