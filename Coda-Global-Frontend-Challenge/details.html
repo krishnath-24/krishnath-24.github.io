@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Details Page</title>
+    <link rel="stylesheet" href="./stylesheets/details.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+</head>
+<body>
+
+
+
+
+    <div class=" container m-container">
+            <div class="d-flex"><i class="fa fa-arrow-left mr-2"></i><a href="/home.html">Go back</a></div>
+
+    
+            <form class="form-inline d-flex md-form form-sm mt-3  mb-5 ml-0">
+                <i class="fa fa-search" aria-hidden="true"></i>
+                <input class="form-control form-control-sm ml-3 w-80" type="text" placeholder="Search your favourite recipe here" aria-label="Search">
+            </form>
+    </div>
+    
+
+    <div class="container">
+
+        <main>
+
+            
+            <img id="recipe-img" src="" alt="">
+
+            <h2 class=" mt-5 mb-3">Ingredients : </h2>
+
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita doloribus illo rem. Quas molestias cum libero necessitatibus, ducimus laborum eligendi eaque harum expedita a nihil nulla delectus reiciendis iure consequatur!</p>
+
+
+            <h2 class="mt-5 mb-3">How to prepare : </h2>
+
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Deserunt voluptatum debitis doloribus hic exercitationem minima molestias quo, delectus minus ex temporibus tenetur! Nobis fugiat vitae porro suscipit, architecto tempore saepe?</p>
+            <br>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aliquam optio consequuntur tempore, assumenda quidem fuga officia fugit temporibus.</p>
+            <br>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Omnis, qui nostrum vel maiores natus assumenda numquam nihil tempora sint ipsam voluptate iure. Libero consectetur, accusantium adipisci cupiditate vitae minima tenetur.</p>
+
+
+        </main>
+    
+        <aside>
+
+            <span class="text-muted" id="recipe-catagory">Recipe</span>
+            <h2 id="recipe-name" class="mt-3"></h2> <span class="text-muted" id="recipe-price"> $ </span>
+
+            <div class="star-rating mt-3">
+                <span class="star-rating-span">4/5</span>
+                <img src="/Assets//Icons/Icon awesome-star.png" alt="">
+                <img src="/Assets//Icons/Icon awesome-star.png" alt="">
+                <img src="/Assets//Icons/Icon awesome-star.png" alt="">
+                <img src="/Assets//Icons/Icon awesome-star.png" alt="">
+
+            </div>
+
+
+            <h4 class="text-muted mt-2">Description</h4>
+
+            <p id="recipe-description"></p>
+
+            <div class="recipe-stats mt-3">
+
+                <div class="circle">
+                    <span>8</span>
+                    <span>Ingredients</span>
+                </div>
+
+
+                <div class="circle">
+                    <span>25</span>
+                    <span>Minutes</span>
+                </div>
+
+                <div class="circle">
+                    <span>220</span>
+                    <span>Bucks</span>
+                </div>
+
+            </div>
+
+            <div class="d-flex mt-3 favorite-container"><h6 class="mr-2 text-muted">FAVORITE THIS RECIPE</h6><img src="Assets/Icons/Icon feather-heart-color.png" alt=""></div>
+            <hr>
+
+            <div class="form-container">
+                <p class="text-muted ">ADD COMMENTS</p>
+
+            <textarea id="comment-box" name="" id="" cols="50" rows="5"></textarea>
+            <button class="btn btn-secondary" id="comment-button">Add Comment</button>
+    
+            </div>
+        </aside>
+    </div>
+    
+    <script src="./scripts/details.js"></script>
+</body>
+</html>

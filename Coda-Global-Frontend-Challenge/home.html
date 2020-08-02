@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HackedRecipe</title>
+    <link rel="stylesheet" href="./stylesheets/home.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body onload=showAlert()>
+
+
+        <div class="container">
+            <!-- Search form -->
+        <form class="form-inline d-flex justify-content-center md-form form-sm mt-0">
+            <i class="fa fa-search" aria-hidden="true"></i>
+            <input class="form-control form-control-sm ml-3 w-80" type="text" placeholder="Search your favourite recipe here" aria-label="Search">
+        </form>
+
+        <span class="text-muted catagory">Catagories</span>
+        <h2 class="tex-lg catagory-title">Pizzas &amp; Noodles</h2>
+
+        <div id="recipe-container">
+
+        <div class="card mt-3 mb-3" style="width: 18rem;">
+                        <img class="card-img-top" src="Assets/Images/Img1.jpg" alt="Card image cap">
+                        <div class="card-body">
+                            <h5 class="card-title">Uthappizza</h5>
+                            <p class="card-text">A unique combination of Indian Uthappam (pancake) and Italian pizza</p>
+                            <a href="/details.html" id="0" class="btn btn-primary">View Details</a>
+                        </div>
+                    </div><div class="card mt-3 mb-3" style="width: 18rem;">
+                        <img class="card-img-top" src="Assets/Images/Img2.jpg" alt="Card image cap">
+                        <div class="card-body">
+                            <h5 class="card-title">Zucchipakoda</h5>
+                            <p class="card-text">Deep fried Zucchini coated with mildly spiced Chickpea flour batter accompanied with a sweet-tangy tamarind sauce</p>
+                            <a href="/details.html" id="1" class="btn btn-primary">View Details</a>
+                        </div>
+                    </div><div class="card mt-3 mb-3" style="width: 18rem;">
+                        <img class="card-img-top" src="/Assets/Images/Img3.jpg" alt="Card image cap">
+                        <div class="card-body">
+                            <h5 class="card-title">Vadonut</h5>
+                            <p class="card-text">A quintessential ConFusion experience, is it a vada or is it a donut?</p>
+                            <a href="./details.html" id="2" class="btn btn-primary">View Details</a>
+                        </div>
+                    </div><div class="card mt-3 mb-3" style="width: 18rem;">
+                        <img class="card-img-top" src="/Assets/Images/Img4.jpg" alt="Card image cap">
+                        <div class="card-body">
+                            <h5 class="card-title">ElaiCheese Cake</h5>
+                            <p class="card-text">A delectable, semi-sweet New York Style Cheese Cake, with Graham cracker crust and spiced with Indian cardamoms</p>
+                            <a href="/details.html" id="3" class="btn btn-primary">View Details</a>
+                        </div>
+                    </div><div class="card mt-3 mb-3" style="width: 18rem;">
+                        <img class="card-img-top" src="/Assets/Images/Img5.jpg" alt="Card image cap">
+                        <div class="card-body">
+                            <h5 class="card-title">Guntur chillies</h5>
+                            <p class="card-text">Assorted chillies from Guntur</p>
+                            <a href="/details.html" id="4" class="btn btn-primary">View Details</a>
+                        </div>
+                    </div><div class="card mt-3 mb-3" style="width: 18rem;">
+                        <img class="card-img-top" src="/Assets/Images/Img6.jpg" alt="Card image cap">
+                        <div class="card-body">
+                            <h5 class="card-title">Buffalo Paneer</h5>
+                            <p class="card-text">A special type of Paneer made from Buffalo milk</p>
+                            <a href="/details.html" id="5" class="btn btn-primary">View Details</a>
+                        </div>
+                    </div><div class="card mt-3 mb-3" style="width: 18rem;">
+                        <img class="card-img-top" src="/Assets/Images/Img7.jpg" alt="Card image cap">
+                        <div class="card-body">
+                            <h5 class="card-title">Cherry Tomatoes</h5>
+                            <p class="card-text">clone of cherry and tomato</p>
+                            <a href="/details.html" id="6" class="btn btn-primary">View Details</a>
+                        </div>
+                    </div><div class="card mt-3 mb-3" style="width: 18rem;">
+                        <img class="card-img-top" src="/Assets/Images/Img1.jpg" alt="Card image cap">
+                        <div class="card-body">
+                            <h5 class="card-title">Goat Milk</h5>
+                            <p class="card-text">Medicinal Goat Milk</p>
+                            <a href="/details.html" id="7" class="btn btn-primary">View Details</a>
+                        </div>
+                    </div><div class="card mt-3 mb-3" style="width: 18rem;">
+                        <img class="card-img-top" src="/Assets/Images/Img2.jpg" alt="Card image cap">
+                        <div class="card-body">
+                            <h5 class="card-title">Rose breasted Grosbeak chicken</h5>
+                            <p class="card-text">Roasted rare bird</p>
+                            <a href="/details.html" id="8" class="btn btn-primary">View Details</a>
+                        </div>
+                    </div><div class="card mt-3 mb-3" style="width: 18rem;">
+                        <img class="card-img-top" src="/Assets/Images/Img3.jpg" alt="Card image cap">
+                        <div class="card-body">
+                            <h5 class="card-title">Toenail Zingy</h5>
+                            <p class="card-text">Cooked Toenails of various animals. This one is funny man.</p>
+                            <a href="/details.html" id="9" class="btn btn-primary">View Details</a>
+                        </div>
+                    </div></div>
+        </div>
+
+
+    <script src="./scripts/home.js"></script>
+    <script>
+        function showAlert() {
+            alert('This took a bit of work... feedback would be appreciated.');
+        }   
+    </script>
+    
+</body>
+</html>

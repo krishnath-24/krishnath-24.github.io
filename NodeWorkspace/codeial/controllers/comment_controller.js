@@ -25,3 +25,8 @@ module.exports.create = (req, res)=>{
         return res.redirect('/');
     });
 }
+
+
+module.exports.destroy = (req, res)=>{
+    
+}
