@@ -29,10 +29,14 @@ form input {
     width: 50%;
 }
 
+
+
 .container main {
     width: 50%;
 }
 
+
+/*  styling the aside section */
 aside{
     display: flex;
     flex-direction: column;
@@ -44,6 +48,8 @@ aside{
 }
 
 
+/* style the recipe stats */
+
 .recipe-stats {
     display: flex;
     align-items: flex-end !important;
@@ -53,6 +59,8 @@ aside{
     flex-direction: row;
 }
 
+
+/* style the star rating span */
 .star-rating-span{
     background-color: black;
     color: white;
@@ -62,6 +70,7 @@ aside{
     border-radius: 3px;
 }
 
+/* style the circle */
 .circle {
     border-radius: 50%;
     background-color: black;
@@ -96,6 +105,8 @@ aside{
     align-self: flex-start;
 }
 
+
+/* style the text area */
 .form-container textarea{
     width: 100%;
     border: none;

@@ -8,7 +8,7 @@ body{
 }
 
 
-
+/* styling the search form */
 form{
     align-self: flex-start;
 }
@@ -20,12 +20,15 @@ form input {
     font-size: 18px !important;
 }
 
+/* aligning the catagory */
 .catagory{
     align-self: flex-end;
 }
 .catagory-title{
     align-self: flex-end;
 }
+
+/*  style the container */
 .container {
     margin: 0;
     display: flex;
@@ -36,6 +39,8 @@ form input {
 
 }
 
+
+/* style the recipe container */
 #recipe-container{
     display: flex;
     flex-wrap: wrap;
@@ -44,6 +49,8 @@ form input {
     padding: 0px;
 }
 
+
+/* styling the recipe card */
 .card{
     border-radius: 10px !important;
     overflow: hidden;

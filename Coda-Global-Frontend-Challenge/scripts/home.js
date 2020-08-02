@@ -1,13 +1,14 @@
 (function(){
 
-    
-
-
+    // reference to the recipe container div
     var recipeContainer = document.querySelector('#recipe-container');
 
+
+    // add the click listener to view the details page.
     function initialize() {
 
         recipeContainer.addEventListener('click',(event)=>{
+            
             event.preventDefault();
             
             if(event.target.className.includes('btn')) {
@@ -17,6 +18,8 @@
         });
     }
 
+
+    // flow starts here
     initialize();
 
 
