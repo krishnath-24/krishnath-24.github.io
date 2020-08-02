@@ -12,7 +12,7 @@
             
             if(event.target.className.includes('btn')) {
 
-                window.open("../details.html"+'?id='+event.target.id,"_blank");
+                window.open("./details.html"+'?id='+event.target.id,"_blank");
             }
         });
     }
