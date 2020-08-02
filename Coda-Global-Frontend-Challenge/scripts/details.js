@@ -13,8 +13,6 @@
         const data = await fetch('http://starlord.hackerearth.com/recipe');
         const recipes = await data.json();
 
-        console.log(recipes);
-        
         recipes.forEach(recipe=>{
             if(recipe.id == id) {
                 renderRecipe(recipe);
@@ -36,11 +34,12 @@
 
 
     function initialize() {
-
         searchRecipeById(getIdFromUrl());
     }   
 
 
+
+    // flow starts from here
     initialize();
 
 })();
