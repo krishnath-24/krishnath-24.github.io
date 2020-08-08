@@ -2,3 +2,20 @@
 <link rel="stylesheet" href="/css/user_profile.css">
 <h2>Codeial : <%= title%></h2>
 
+
+
+    <% if(currUser.id == locals.user.id) { %>
+
+        <form action="/user/update/<%= currUser.id %>" method="POST">
+            <input type="text" name="name" placeholder="Enter name" required>
+            <input type="text" name="email" placeholder="Enter email" required>
+            <button>Submit</button>
+        </form>
+
+    <% } else { %>
+
+        <p><%= currUser.name %></p>
+        <p><%= currUser.email %></p>
+        <p><%= currUser.password %></p>
+
+    <% } %>
