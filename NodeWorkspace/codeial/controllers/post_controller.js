@@ -1,36 +1,56 @@
 const Post = require('../models/post');
 const Comment = require('../models/comment');
 
-module.exports.createPost = (req, res)=> {
+// action to create a post
+module.exports.createPost = async (req, res)=> {
     
-    Post.create({
-        content : req.body.content,
-        user : req.user.id
+    try {
 
-    },(error,post)=>{
-        if(error) {
-            console.log(error);
-            return res.redirect('back');
-        }
-        res.redirect('/');
-    });
+        // create the post
+        const post = await Post.create({
+            // pass the post data from the request body
+            content : req.body.content,
+            user : req.user.id
+        });
+    
+        // if post was created then redirect to home
+        if(post) return res.redirect('/');
+        
+    } catch (error) {
+        // if error then redirect back
+        console.log(error);
+        return res.redirect('back');
+    }
 }
 
-module.exports.destroy = (req, res) => {
 
-    Post.findById(req.params.id,(error,post)=>{
+// action to delete a post
+module.exports.destroy = async (req, res) => {
 
-        if(post) {
-            if(post.user == req.user.id) {
+    try {
+
+        // find the post using the id and store in post
+        let post = await Post.findById(req.params.id);
+
+        if(post) { // if the post was found
+
+            // if the post's user matches the current logged in user
+            if(post.user == req.user.id) { 
+
+                // remove the post
                 post.remove();
-                
-                Comment.deleteMany({post : req.params.id},(error)=>{
-                    return res.redirect('back');
-                });
+
+                // delete all the comments associated with the post
+                await Comment.deleteMany({post : req.params.id});
             }
-        }
-        else {
-            return res.redirect('back');
-        }
-    });
+
+            res.redirect('back');
+        };
+
+    } catch (error) {
+        // log the error
+        console.log(error);
+        // redirect back
+        res.redirect('back');
+    }
 }

@@ -6,68 +6,71 @@ const Post = require('../models/post');
 
 
 // define the create comment action
-module.exports.create = (req, res)=>{
+module.exports.create = async (req, res)=>{
 
-    // fetch id of post on which the comment is made
-    let postId = req.params.id;
+    try {
+        // fetch id of post on which the comment is made
+        let postId = req.params.id;
 
-    // find the post
-    Post.findById(postId, (error, post)=>{
+        // find the post
+        let post = await Post.findById(postId);
 
         if(post) { // if the post is found
 
             // create the comment
-            Comment.create({
+            let comment = await Comment.create({
                 content : req.body.content,
                 user : req.user.id,
                 post : postId
-            },(error, comment)=>{
-
-                // comment was created successfully
-                if(comment) {
-                    // push the comment id into the post's comment array
-                    post.comment.push(comment.id);
-                    post.save(); // save the post
-                }
             });
+
+            // comment was created successfully
+            if(comment) {
+                // push the comment id into the post's comment array
+                post.comment.push(comment.id);
+                post.save(); // save the post
+            }
         }
         // redirect to home
         return res.redirect('/');
-    });
+
+    } catch (error) {
+        console.log(error);
+        return res.redirect('back');
+    }
+
 }
 
 
-module.exports.delete = (req, res)=>{
+
+// action to delete the comment
+module.exports.delete = async (req, res)=>{
 
     // find the comment
-    Comment.findById(req.params.id,(err,comment)=>{
+    let comment = await Comment.findById(req.params.id);
 
-        // store the post id
-        let postId = comment.post;
+    // store the post id
+    let postId = comment.post;
 
-        // find the post of the comment
-        Post.findById(postId,(err,post)=>{
+    // find the post of the comment
+    let post = await Post.findById(postId);
 
-            // store the id of the user who made the comment
-            let postUserId = post.user;
+    if(post) {
 
-            // the comment should be able to be deleted by either the comment owner or the post owner
-            if((comment.user == req.user.id) || (postUserId == req.user.id)) {
+        // store the id of the user who made the comment
+        let postUserId = post.user;
 
-                // remove the comment
-                comment.remove();
+        // the comment should be able to be deleted by either the comment owner or the post owner
+        if((comment.user == req.user.id) || (postUserId == req.user.id)) {
 
-                // also update the comment array of the post to remove the current comment
-                Post.findByIdAndUpdate(postId,{$pull : {comment : req.params.id}},(err,post)=>{
-                    console.log(post);
-                });
-            }
+            // remove the comment
+            comment.remove();
 
-        });
-        
-        // redirect to home page
-        return res.redirect('back');
-    });
-
+            // also update the comment array of the post to remove the current comment
+            await Post.findByIdAndUpdate(postId,{$pull : {comment : req.params.id}});
+        }
+    }
     
+    // redirect to home page
+    return res.redirect('back');
 }
