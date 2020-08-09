@@ -1,28 +1,38 @@
 const User = require('../models/user');
 
 
-module.exports.profile = function(req, res){
+module.exports.profile = async function(req, res){
 
-    User.findById(req.params.id,(error,user)=>{
+    try{
+
+        let user  = await User.findById(req.params.id);
+
         return res.render('profile', {
             title: 'User Profile',
             currUser : user
         });
-    });
+
+    } catch(error) {
+
+        console.log(error);
+        res.redirect('back');
+    }
 }
 
-module.exports.update = function(req,res) {
-    console.log(req.user.id == req.params.id);
-    if(req.user.id == req.params.id) {
+module.exports.update = async function(req,res) {
     
-        User.findByIdAndUpdate(req.params.id,req.body,(error,user)=>{
- 
-            console.log(user);
-            res.redirect('/');
-        });
-    } else {
+    try {
+        if(req.user.id == req.params.id) {
 
-        res.status(401).send('Unauthorized');
+            let user = await User.findByIdAndUpdate(req.params.id,req.body);
+            res.redirect('/');
+        } else {
+            res.status(401).send('Unauthorized');
+        }
+
+    } catch (error) {
+        console.log(error);
+        res.redirect('back');
     }
 }
 
@@ -49,22 +59,22 @@ module.exports.signIn = function(req, res){
 }
 
 // get the sign up data
-module.exports.create = function(req, res){
-    User.findOne({email: req.body.email}, function(err, user){
-        if(err){console.log('error in finding user in signing up'); return}
+module.exports.create = async function(req, res){
 
-        if (!user){
-    
-            User.create(req.body, function(err, user){
-                if(err){console.log('error in creating user while signing up'); return}
+    try {
+        
+        let user = await User.findOne({email: req.body.email});
 
-                return res.redirect('/user/sign-in');
-            });
-        }else{
-            return res.redirect('back');
-        }
+        if(!user) await User.create(req.body);
+        
+        return res.redirect('/user/sign-in');
 
-    });
+    } catch (error) {
+
+        console.log(error);
+        res.redirect('back');
+    }
+
 }
 
 // sign out the user
