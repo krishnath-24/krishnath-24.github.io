@@ -1,22 +1,22 @@
-<div class="container">
-    <h2>Codeial : <%= title %></h2>
+<h2>Codeial : <%= title %></h2>
 
-<section id="feed-posts">
+<div id="container">
+    <section id="feed-posts">
 
-    <%- include('_PostAndComments') -%>
-
-</section>
-
-<section id="user-friends">
-
-    <h4>Friends</h4>
-
-    <% for(user of all_users) { %>
-
-        <p>
-            <a href="/user/profile/<%= user.id %>"><%= user.name %></a>
-        </p>
-    <% } %>
-</section>
-
+        <%- include('_PostAndComments') -%>
+    
+    </section>
+    
+    <section id="user-friends">
+    
+        <h4>Friends</h4>
+    
+        <% for(user of all_users) { %>
+    
+            <p>
+                <a href="/user/profile/<%= user.id %>"><%= user.name %></a>
+            </p>
+        <% } %>
+    </section>
+    
 </div>
