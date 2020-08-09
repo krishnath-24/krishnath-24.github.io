@@ -14,6 +14,14 @@ app.use(cookieParser());
 
 app.use(expressLayouts);
 
+app.use(sassMiddleware({
+    src : './assets/scss',
+    dest : './assets/css',
+    debug: true,
+    outputStyle : 'extended',
+    prefix : '/css'
+}));
+
 app.set('layout extractStyles', true);
 app.set('layout extractScripts', true);
 
