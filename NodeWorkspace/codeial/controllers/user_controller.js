@@ -14,7 +14,7 @@ module.exports.profile = async function(req, res){
 
     } catch(error) {
 
-        console.log(error);
+        req.flash('error',error);
         res.redirect('back');
     }
 }
@@ -25,13 +25,14 @@ module.exports.update = async function(req,res) {
         if(req.user.id == req.params.id) {
 
             let user = await User.findByIdAndUpdate(req.params.id,req.body);
+            req.flash('success','user updated successfully');
             res.redirect('/');
         } else {
             res.status(401).send('Unauthorized');
         }
 
     } catch (error) {
-        console.log(error);
+        req.flash('error',error);
         res.redirect('back');
     }
 }
@@ -40,7 +41,10 @@ module.exports.update = async function(req,res) {
 // render the sign up page
 module.exports.signUp = function(req, res){
 
-    if(req.isAuthenticated()) return res.redirect('/');
+    if(req.isAuthenticated()){
+        req.flash('error','Please login.');
+        return res.redirect('/');
+    } 
 
     return res.render('signup', {
         title: "Codeial | Sign Up"
@@ -51,7 +55,10 @@ module.exports.signUp = function(req, res){
 // render the sign in page
 module.exports.signIn = function(req, res){
 
-    if(req.isAuthenticated()) return res.redirect('/');
+    if(req.isAuthenticated()){
+        req.flash('error','Please login.');
+        return res.redirect('/');
+    }
 
     return res.render('signin', {
         title: "Codeial | Sign In"
@@ -71,7 +78,7 @@ module.exports.create = async function(req, res){
 
     } catch (error) {
 
-        console.log(error);
+        req.flash('error',error);
         res.redirect('back');
     }
 

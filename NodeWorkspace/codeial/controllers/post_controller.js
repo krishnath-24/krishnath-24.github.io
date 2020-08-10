@@ -14,11 +14,14 @@ module.exports.createPost = async (req, res)=> {
         });
     
         // if post was created then redirect to home
-        if(post) return res.redirect('/');
+        if(post){
+            req.flash('success','Post created.');
+             return res.redirect('/');
+        }
         
     } catch (error) {
         // if error then redirect back
-        console.log(error);
+        req.flash('error',error);
         return res.redirect('back');
     }
 }
@@ -44,12 +47,13 @@ module.exports.destroy = async (req, res) => {
                 await Comment.deleteMany({post : req.params.id});
             }
 
+            req.flash('success','Post and its comments deleted.');
             res.redirect('back');
         };
 
     } catch (error) {
         // log the error
-        console.log(error);
+        req.flash('error',error);
         // redirect back
         res.redirect('back');
     }

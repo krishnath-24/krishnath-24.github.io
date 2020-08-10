@@ -16,6 +16,7 @@ module.exports.home = async function(req,res) {
         });
 
         let users = await User.find({});
+
         return res.render('home',{
             title : 'home',
             posts : posts,
@@ -23,7 +24,7 @@ module.exports.home = async function(req,res) {
         });
         
     } catch (error) {
-        console.log(error);
+        req.flash('error',error);
         return res.redirect('back');
     }
     
