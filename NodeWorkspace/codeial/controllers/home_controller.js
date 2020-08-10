@@ -21,7 +21,7 @@ module.exports.home = async function(req,res) {
             posts : posts,
             all_users : users
         });
-
+        
     } catch (error) {
         console.log(error);
         return res.redirect('back');

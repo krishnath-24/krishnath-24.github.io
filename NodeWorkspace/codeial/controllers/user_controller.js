@@ -80,11 +80,14 @@ module.exports.create = async function(req, res){
 // sign out the user
 module.exports.signOut = (req,res)=>{
     req.logout();
+    req.flash('success','Signed out successfuly');
     return res.redirect('/');
 }
 
 
 // sign in and create a session for the user
 module.exports.createSession = function(req, res){
+
+    req.flash('success','signed in successfuly');
     return res.redirect('/');
 }
