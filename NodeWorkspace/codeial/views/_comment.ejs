@@ -1,0 +1,13 @@
+<li style="list-style: none;">
+    <div class="mt-3 ml-5">
+
+        <p class="text-success d-inline"><%= comment.content %></p> 
+
+        <strong><span><%= comment.user.name%></span></strong>
+
+        <% if(locals.user && (comment.user.id == locals.user.id || post.user.id == locals.user.id)) { %>
+            <a href="/comment/delete/<%= comment.id %>" class="btn btn-sm p-1 btn-danger">Delete comment</a>
+        <% } %>
+
+    </div>
+</li>
