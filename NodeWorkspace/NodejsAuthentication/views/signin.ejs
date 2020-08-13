@@ -1,9 +1,10 @@
 <%- include('_header') %>
 
+<h4>Sign in!</h4>
 <form action="/users/create-session" method="POST">
     <input type="email" placeholder="email" required name="email">
     <input type="password" placeholder="password" required name="password">
-    <input type="submit">
+    <button class="btn btn-primary" type="submit">Submit</button>
 </form>
 
 <%- include('_footer') %>
