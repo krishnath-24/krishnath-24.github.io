@@ -17,13 +17,17 @@
                 data : newPostForm.serialize(),
 
                 success : function(data) {
-                    console.log(data);
 
                     let newPost = newPostDom(data.data.post);
+
                     $('#post-list-container>ul').prepend(newPost);
+
                     displayNotification('success','Post created.');
+
                     deletePost($(' .delete-post-button',newPost));
+
                 },error : function(error) {
+
                     displayNotification('error',error);
                     console.log(error.responseText);
                 }
@@ -31,7 +35,6 @@
         });
 
     }
-
 
     let newPostDom = function(post) {
 
