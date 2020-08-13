@@ -13,8 +13,6 @@ router.get('/sign-in', (req, res)=>{
 
 router.post('/create',(req,res)=>{
 
-    console.log(req.body);
-
     User.create(req.body,(error,user)=>{
         
         if(error) {
@@ -32,7 +30,7 @@ router.post('/create-session',(req, res)=>{
     
     User.find({email : req.body.email},(error, user)=>{
         if(error || user.password !== req.body.password) {
-            
+
             return res.redirect('back');
         }
 
