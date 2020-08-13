@@ -1,0 +1,9 @@
+<%- include('_header') %>
+
+<form action="/users/create-session" method="POST">
+    <input type="email" placeholder="email" required name="email">
+    <input type="password" placeholder="password" required name="password">
+    <input type="submit">
+</form>
+
+<%- include('_footer') %>
