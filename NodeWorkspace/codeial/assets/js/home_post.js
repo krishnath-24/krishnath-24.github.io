@@ -5,7 +5,7 @@
     let attachAjaxDeleteToPosts = function() {
 
         let posts = $('#post-list-container>ul>li');
-        
+
         for(post of posts) {
             deletePost($(' .delete-post-button',post));
         }
@@ -86,10 +86,11 @@
 
         $(deleteLink).click((e)=>{
             e.preventDefault();
-
+            
             $.ajax({
                 type : 'get',
                 url : $(deleteLink).prop('href'),
+
                 success : (data)=>{
                     $(`#post-${data.data.post_id}`).remove();
                     displayNotification('success','Post deleted.');

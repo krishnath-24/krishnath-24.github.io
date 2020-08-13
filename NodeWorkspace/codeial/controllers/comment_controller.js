@@ -9,6 +9,8 @@ const Post = require('../models/post');
 module.exports.create = async (req, res)=>{
 
     try {
+
+        
         // fetch id of post on which the comment is made
         let postId = req.params.id;
 
@@ -30,6 +32,16 @@ module.exports.create = async (req, res)=>{
                 post.comment.push(comment.id);
                 post.save(); // save the post
                 req.flash('success','Comment created successfuly.');
+
+                if(req.xhr) {
+                    console.log('comment using ajax');
+                    res.status(200).send({
+                        data : {
+                            comment : comment
+                        },
+                        message : 'Comment created successfully'
+                    });
+                }
             }
         }
         // redirect to home
