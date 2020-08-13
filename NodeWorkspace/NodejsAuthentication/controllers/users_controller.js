@@ -1,6 +1,5 @@
 const User = require('../models/User');
 
-
 module.exports.signUp = (req, res) => {
     return res.render('signup');
 }
@@ -19,15 +18,14 @@ module.exports.create = (req, res) => {
         else console.log('user created : ' + user);
     });
 
-    res.redirect('/users/profile');
+    return res.redirect('/users/profile');
 }
 
 module.exports.createSession = (req, res) => {
 
-    console.log(req.body);
-    
     User.findOne({email : req.body.email},(error, user)=>{
         if(error || user.password != req.body.password) {
+
             return res.redirect('back');
         }
         return res.redirect('/users/profile');
@@ -41,6 +39,8 @@ module.exports.profile = (req, res) => {
 
 
 module.exports.logout = (req, res) => {
-    
-    return res.redirect('/users/sign-in');
+    req.logout();
+    res.clearCookie('nodeauth');
+    res.redirect('/users/sign-in');
+
 }

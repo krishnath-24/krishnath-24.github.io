@@ -1,10 +1,10 @@
 <%- include('_header') %>
 
-<h4>Sign in!</h4>
+<h4>Sign in <span> or <a href="/users/sign-up" class="btn btn-sm btn-primary">Sign up</a></span></h4> 
 <form action="/users/create-session" method="POST">
     <input type="email" placeholder="email" required name="email">
     <input type="password" placeholder="password" required name="password">
-    <button class="btn btn-primary" type="submit">Submit</button>
+    <button class="btn btn-sm btn-primary" type="submit">Sign in</button>
 </form>
 
 <%- include('_footer') %>

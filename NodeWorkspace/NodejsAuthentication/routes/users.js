@@ -1,17 +1,18 @@
 const router = require('express').Router();
-const User = require('../models/User');
 const userController = require('../controllers/users_controller');
+const passport = require('passport');
 
 router.get('/sign-up',userController.signUp);
 
-router.get('/sign-in', userController.signIn);
+router.get('/sign-in',passport.checkNotAuthenticated, userController.signIn);
 
 router.post('/create',userController.create);
 
-router.post('/create-session',userController.createSession);
+router.post('/create-session', passport.authenticate('local',{
+    failureRedirect : '/users/sign-in'
+}) ,userController.createSession);
 
-router.get('/profile',userController.profile);
-
+router.get('/profile',passport.checkAuthenticated ,userController.profile);
 
 router.get('/sign-out', userController.logout);
 
