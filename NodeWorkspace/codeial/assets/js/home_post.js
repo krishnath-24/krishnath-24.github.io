@@ -1,14 +1,25 @@
 {
+
+    // method to attach ajax delete to all existing post
+
+    let attachAjaxDeleteToPosts = function() {
+
+        let posts = $('#post-list-container>ul>li');
+        
+        for(post of posts) {
+            deletePost($(' .delete-post-button',post));
+        }
+    }
+
+
     // method to submit the form data for new post using ajax
     let createPost = function() {
 
-        console.log('inside');
+
         let newPostForm = $('#new-post-form');
         newPostForm.submit((e)=>{
 
             e.preventDefault();
-
-            console.log('here');
 
             $.ajax({
                 type : 'post',
@@ -101,5 +112,6 @@
     }
 
 
+    attachAjaxDeleteToPosts();
     createPost();
 }

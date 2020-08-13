@@ -5,13 +5,15 @@
     <% if(locals.user && post.user.id == locals.user.id) { %>
         <a class=" delete-post-button btn btn-sm btn-danger " href="/posts/destroy/<%= post._id %>">Delete Post</a>
     <% } %>
-    <form action="/comment/create/${post._id}" method="POST" class="form-inline mt-3">
+    
+    <form id="new-comment-form" action="/comment/create/${post._id}" method="POST" class="form-inline mt-3">
         
         <div class="form-group mx-sm-3 mb-2">
             <label for="inputComment" class="sr-only">Comment</label>
             <input required type="text" class="form-control" id="inputComment" placeholder="comment" name="content">
         </div>
         <button type="submit" class="btn btn-primary mb-2">Submit</button>
+
     </form>
 
     <%   for(comment of post.comment) { %>
