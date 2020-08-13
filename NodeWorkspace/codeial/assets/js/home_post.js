@@ -18,7 +18,7 @@
 
                 success : function(data) {
 
-                    let newPost = newPostDom(data.data.post);
+                    let newPost = newPostDom(data.data.post,data.data.name);
 
                     $('#post-list-container>ul').prepend(newPost);
 
@@ -36,7 +36,7 @@
 
     }
 
-    let newPostDom = function(post) {
+    let newPostDom = function(post,name) {
 
         return $(`<li id="post-${post._id}">
     
@@ -48,7 +48,7 @@
 
                 <form action="/comment/create/${post._id}" method="POST" class="form-inline mt-3">
                     <small>
-                        ${post.user.name}
+                        ${name}
                     </small>
                     <div class="form-group mx-sm-3 mb-2">
                         <label for="inputComment" class="sr-only">Comment</label>

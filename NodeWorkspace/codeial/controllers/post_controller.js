@@ -13,12 +13,15 @@ module.exports.createPost = async (req, res)=> {
             user : req.user.id
         });
 
-
+        const user = await Post.find({_id : post._id})
+        .populate('user');
 
         if(req.xhr){
+
             return res.status(200).json({
                 data : {
                     post : post,
+                    name : user['0'].user.name
                 },
                 message : 'post created.'
             });
