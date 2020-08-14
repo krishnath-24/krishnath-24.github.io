@@ -1,4 +1,6 @@
 const User = require('../models/User');
+const bcrypt = require('bcrypt');
+
 
 module.exports.signUp = (req, res) => {
     return res.render('signup');
@@ -8,17 +10,26 @@ module.exports.signIn = (req, res) => {
     return res.render('signin');
 }
 
-module.exports.create = (req, res) => {
-    
-    User.create(req.body,(error,user)=>{
-        
-        if(error) {
-            console.log(error);
-        }
-        else console.log('user created : ' + user);
-    });
+module.exports.create = async (req, res) => {
+    try {
+        const hashedPassword = await bcrypt.hash(req.body.password,10);
 
-    return res.redirect('/users/profile');
+        User.create({
+            email : req.body.email,
+            password : hashedPassword
+        },(error,user)=>{
+            
+            if(error) {
+                console.log(error);
+            }
+            else console.log('user created : ' + user);
+        });
+
+        return res.redirect('/users/profile');
+    
+    } catch (error) {
+        return res.redirect('back');
+    }
 }
 
 module.exports.createSession = (req, res) => {

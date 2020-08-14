@@ -1,8 +1,8 @@
 const router = require('express').Router();
 const userController = require('../controllers/users_controller');
-const passport = require('passport');
+const passport = require('../config/passport-local-strategy');
 
-router.get('/sign-up',userController.signUp);
+router.get('/sign-up',passport.checkNotAuthenticated,userController.signUp);
 
 router.get('/sign-in',passport.checkNotAuthenticated, userController.signIn);
 
