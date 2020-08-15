@@ -1,0 +1,57 @@
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+    text-align:center;
+}
+
+.app-title{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    margin-bottom: 50px;
+    margin-left: 10px;
+}
+
+.username{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+#mcontainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 400px;
+    width: 400px;
+    border-radius: 10px;
+    box-shadow: 1px 1px 5px 5px #cccccc;
+    padding: 10px;
+    text-align:none;
+    text-justify: distribute;
+}
+
+input{
+    display: block;
+    min-width: 90%;
+    border: none;
+    padding: 10px;
+    background-color: #f3f1f1;
+    margin-top: 10px;
+    border-radius: 5px;
+    min-width: 300px;
+    outline-color: #f0f0f0;
+}
+
+.btn{
+    min-width: 300px !important;
+}
+
+a{
+    text-decoration: none !important;
+    font-size: 20px;
+}
+
+i{
+    font-size: 20px !important;
+}

@@ -15,6 +15,7 @@ module.exports.create = async (req, res) => {
         const hashedPassword = await bcrypt.hash(req.body.password,10);
 
         User.create({
+            name : req.body.name,
             email : req.body.email,
             password : hashedPassword
         },(error,user)=>{
@@ -39,6 +40,7 @@ module.exports.createSession = (req, res) => {
             return res.redirect('back');
         }
         
+        req.flash('success','Signed In successfully');
         return res.redirect('/users/profile');
     });
 }
@@ -52,11 +54,13 @@ module.exports.profile = (req, res) => {
 module.exports.logout = (req, res) => {
 
     req.logout();
+    req.flash('success','Logged out');
     res.redirect('/users/sign-in');
 
 }
 
 module.exports.passwordUpdateForm = (req, res) => {
+    
     return res.render('reset_password');
 }
 
@@ -65,6 +69,7 @@ module.exports.resetPassword = (req, res) => {
     const {oldPassword, newPassword,confirmPassword} = req.body;
 
     if(newPassword != confirmPassword) {
+
         return res.redirect('/');
     }
 
