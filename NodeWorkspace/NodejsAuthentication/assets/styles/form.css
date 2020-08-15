@@ -1,3 +1,4 @@
+/* style the body */
 body{
     display: flex;
     justify-content: center;
@@ -7,16 +8,19 @@ body{
     text-align:center;
 }
 
+/* style the app title */
 .app-title{
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     margin-bottom: 50px;
     margin-left: 10px;
 }
 
+/* style the username */
 .username{
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
+/* style the container */
 #mcontainer{
     display: flex;
     flex-direction: column;
@@ -31,6 +35,7 @@ body{
     text-justify: distribute;
 }
 
+/* style the inputs */
 input{
     display: block;
     min-width: 90%;
@@ -43,15 +48,18 @@ input{
     outline-color: #f0f0f0;
 }
 
+/* styles the button */
 .btn{
     min-width: 300px !important;
 }
 
+/* style the links */
 a{
     text-decoration: none !important;
     font-size: 20px;
 }
 
+/* style the icon */
 i{
     font-size: 20px !important;
 }

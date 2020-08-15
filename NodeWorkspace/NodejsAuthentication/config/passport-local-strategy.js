@@ -1,8 +1,10 @@
+// require the modules
 const passport = require('passport');
 const User = require('../models/User');
 const LocalStrategy = require('passport-local').Strategy;
 const bcrypt = require('bcrypt');
 
+// use the local strategy
 passport.use(new LocalStrategy({
     usernameField : 'email'},
     function(email, password, done){
@@ -13,13 +15,11 @@ passport.use(new LocalStrategy({
                 console.log(error);
                 return done(error);
             }
-
             else  {
 
                 if(!user) {
                     return done(null, false);
                 }
-
                 try {
                     const result = await bcrypt.compare(password, user.password);
                     if(result) return done(null, user);
@@ -31,32 +31,29 @@ passport.use(new LocalStrategy({
                     return done(null, false);
                 }
             }
-
-            
         });
 }));
 
 
+// serialize the user
 passport.serializeUser((user, done) => {
     return done(null, user.id);
 });
 
-
+// deserialize the user
 passport.deserializeUser((id,done) => {
 
     User.findById(id, (error, user) => {
         
         if(error) {
-            console.log(error);
             return done(error);
         }
-
         return done(null, user);
     });
 });
 
 
-
+//  check if the user is authenticated
 passport.checkAuthenticated = (req, res, next) => {
 
     if(req.isAuthenticated()) {
@@ -65,7 +62,7 @@ passport.checkAuthenticated = (req, res, next) => {
     return res.redirect('/users/sign-in');
 }
 
-
+// set the authenticated user
 passport.setAuthenticatedUser = (req, res, next) => {
 
     if(req.isAuthenticated()) {
@@ -74,14 +71,14 @@ passport.setAuthenticatedUser = (req, res, next) => {
     next();
 }
 
+// check if the user is not authenticated
 passport.checkNotAuthenticated = (req, res, next) => {
 
     if(req.isAuthenticated()) {
         return res.redirect('/users/profile');
     }
-
     next();
 }
 
-
+//  export the passport
 module.exports = passport;

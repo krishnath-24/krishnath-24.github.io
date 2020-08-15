@@ -54,7 +54,7 @@ passport.use(new googleStrategy({
 
 #### Authenticate Requests
 
-Use `passport.authenticate()`, specifying the `'google and local'` strategy, to
+Use `passport.authenticate()`, specifying the `'google'` strategy, to
 authenticate requests.
 
 For example, as route middleware in an [Express](http://expressjs.com/)
@@ -71,6 +71,12 @@ app.get('/auth/google/callback',
   });
 ```
 
+#### steps to run the project
+
+* clone the repository
+* cd Nodejsauthentication
+* npm install
+* nodemon
 
 
 ## Contributing
