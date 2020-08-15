@@ -1,6 +1,5 @@
 const User = require('../models/User');
 const bcrypt = require('bcrypt');
-const { readyState } = require('../config/mongoose');
 
 
 module.exports.signUp = (req, res) => {
@@ -36,10 +35,10 @@ module.exports.create = async (req, res) => {
 module.exports.createSession = (req, res) => {
 
     User.findOne({email : req.body.email},(error, user)=>{
-        if(error || user.password != req.body.password) {
-
+        if(error) {
             return res.redirect('back');
         }
+        
         return res.redirect('/users/profile');
     });
 }
@@ -71,8 +70,6 @@ module.exports.resetPassword = (req, res) => {
 
     User.findOne({email : req.user.email},async (error, user) => {
 
-        
-
         try {
 
             if(error || !user) {
@@ -101,3 +98,4 @@ module.exports.resetPassword = (req, res) => {
         }
     });
 }
+

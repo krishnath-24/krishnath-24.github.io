@@ -1,11 +1,12 @@
 <%- include('_header') %>
 
-    <h4>Sign up</h4>
+    <h4>Sign up or <a class="btn btn-sm btn-primary" href="/users/sign-in">Sign in</a></h4>
     <form action="/users/create" method="POST">
         <input type="email" required placeholder="email" name="email">
         <input type="text" required placeholder="password" name="password">
         <button class="btn btn-sm btn-primary">Sign up</button>
 </form>
 
+<%- include('_googleSignin') %>
 
 <%- include('_footer') %>
