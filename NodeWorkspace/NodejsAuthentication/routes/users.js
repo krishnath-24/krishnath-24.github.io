@@ -16,4 +16,8 @@ router.get('/profile',passport.checkAuthenticated ,userController.profile);
 
 router.get('/sign-out', userController.logout);
 
+router.get('/password/reset',passport.checkAuthenticated ,userController.passwordUpdateForm);
+
+router.post('/password/reset',userController.resetPassword);
+
 module.exports = router;

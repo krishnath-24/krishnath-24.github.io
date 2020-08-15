@@ -22,10 +22,12 @@ passport.use(new LocalStrategy({
 
                 try {
                     const result = await bcrypt.compare(password, user.password);
-                    console.log(password, user.password);
                     if(result) return done(null, user);
+
+                    else return done(null, false);
                     
                 } catch (error) {
+                    console.log(error);
                     return done(null, false);
                 }
             }
