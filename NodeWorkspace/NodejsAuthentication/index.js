@@ -1,18 +1,16 @@
 //  require all the modules
 const express = require('express');
 const app = express();
-const port = process.env.PORT || 8000;
-const bodyParser = require('body-parser');
-const db = require('./config/mongoose');
-const passport = require('passport');
-const localStrategy = require('./config/passport-local-strategy');
-const session = require('express-session');
+const db = require('./config/mongoose');``
 const cookieParser = require('cookie-parser');
+const session = require('express-session');
+const passport = require('passport');
+const LocalStrategy = require('./config/passport-local-strategy');
 const MongoStore = require('connect-mongo')(session);
-const passportGoogle = require('./config/passport-google-oauth2-strategy');
-const notyMiddleware = require('./config/noty-middleware');
 const flash = require('connect-flash');
-
+const customMiddleware = require('./config/middleware');
+const passportGoogle = require('./config/passport-google-oauth2-strategy');
+const bodyParser = require('body-parser');
 
 // use body parser to parse form data
 app.use(bodyParser.urlencoded({extended : true}));
@@ -24,7 +22,7 @@ app.use(cookieParser());
 app.set('view engine','ejs');
 
 // set the views directory
-app.set('views',__dirname + '/views');
+app.set('views','./views');
 
 // set the static assets folder
 app.use(express.static(__dirname + '/assets'));
@@ -52,11 +50,12 @@ app.use(passport.session());
 // set the user when that user logs in
 app.use(passport.setAuthenticatedUser);
 
+
 // use flash to display messages
 app.use(flash());
 
 // use the middleware to set the flash messages
-app.use(notyMiddleware.setFlash);
+app.use(customMiddleware.setFlash);
 
 
 // use the users route
@@ -64,9 +63,11 @@ app.use('/users',require('./routes/users'));
 
 // home route
 app.get('/',(req, res) => {
-    return res.redirect('/users/sign-in');
+    return res.redirect('/users/sign-up');
 });
 
+// define the port
+const port = process.env.PORT || 8000;
 
 // start the server
 app.listen(port,()=>{

@@ -24,16 +24,20 @@ module.exports.create = async (req, res) => {
             name : req.body.name,
             email : req.body.email,
             password : hashedPassword
+
         },(error,user)=>{
             
             if(error) {
                 req.flash('error', error);
                 return res.redirect('/users/sign-in');
             } 
+
+            if(user) {
+                req.flash('success','Signed up successfully!');
+                return res.redirect('/users/sign-in');
+            } 
         });
 
-        return res.redirect('/users/profile');
-    
     } catch (error) {
         req.flash('error',error);
         return res.redirect('back');
@@ -43,11 +47,20 @@ module.exports.create = async (req, res) => {
 // action to create the user session
 module.exports.createSession = (req, res) => {
 
-    User.findOne({email : req.body.email},(error, user)=>{
+
+    User.findOne({email : req.body.email}, async (error, user)=>{
+
         if(error) {
+            console.log(error);
+            req.flash('error',error);
             return res.redirect('back');
         }
         
+        if(!user) {
+            console.log('user was not found');
+            return res.redirect('/');
+        }
+
         req.flash('success','Signed In successfully');
         return res.redirect('/users/profile');
     });
@@ -62,10 +75,10 @@ module.exports.profile = (req, res) => {
 // action to log the user out
 module.exports.logout = (req, res) => {
 
+    req.flash('success','Logged out successfully');
     req.logout();
-    req.flash('success','Logged out');
     res.redirect('/users/sign-in');
-
+    
 }
 
 // action to handle the password reset route
@@ -79,9 +92,10 @@ module.exports.resetPassword = (req, res) => {
 
     const {oldPassword, newPassword,confirmPassword} = req.body;
 
+    console.log(oldPassword,newPassword,confirmPassword);
     if(newPassword != confirmPassword) {
         req.flash('error','The entered passwords dont match');
-        return res.redirect('/');
+        return res.redirect('back');
     }
 
     // find the user in the database
@@ -105,16 +119,20 @@ module.exports.resetPassword = (req, res) => {
                     password : hashedPassword
                 },
                     (error, updatedUser) => {
+
                         if(error) {
                             console.log(error);
                             return res.redirect('back');
                         }
-                        return res.redirect('/');
+                        
+                        req.flash('success','Password changed successfully');
+                        return res.redirect('/users/profile');
+                        
                     });
             } else {
                 // the password entered was incorrect
                 req.flash('error','Incorrect old password');
-                return res.redirect('/');
+                return res.redirect('back');
             }
         } catch (error) {
 

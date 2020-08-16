@@ -5,17 +5,31 @@
 
 </div>
 
+    
 <script>
-    <% if(flash.success && flash.success.length > 0){ %>
+    <% if(locals.flash.success && locals.flash.success.length >0) { %> 
         new Noty({
             theme : 'relax',
-            text: <%= flash.success %>,
-            type : 'success',   
+            text: '<%= locals.flash.success %>',
+            type : 'success',
             layout : 'topRight',
             timeout : 1500
+        }
+        ).show();
+    <% }%>
+
+    <% if(locals.flash.error && locals.flash.error.length > 0) { %> 
+        new Noty({
+            theme: 'relax',
+            text: '<%= locals.flash.error %>',
+            type : 'error',
+            layout : 'topRight',
+            timeout : 2000
         }).show();
-    <% } %>
-   
+    <% }%>
 </script>
+
+
+   
 </body>
 </html>

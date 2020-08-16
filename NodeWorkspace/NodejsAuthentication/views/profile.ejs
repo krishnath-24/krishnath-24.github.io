@@ -1,8 +1,28 @@
-<%- include('_header') %>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/styles/form.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/noty/3.1.4/noty.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/noty/3.1.4/noty.js"></script>
+    <title>Nodejs Auth App</title>
+
+</head>
+<body>
+
+<h2 class="app-title text-muted text-success">Nodejs app with Social auth</h2>
+
+
+    <div id="mcontainer">
+    
+
 
 <h2 class="text-muted">Welcome <em class="username"><%= locals.user.name %></em></h2>
 <a class="btn btn-primary" href="/users/password/reset">Reset Password</a>
 <a class="btn btn-primary" href="/users/sign-out">Sign out</a>
 
-    
+
 <%- include('_footer') %>

@@ -6,24 +6,30 @@ const bcrypt = require('bcrypt');
 
 // use the local strategy
 passport.use(new LocalStrategy({
-    usernameField : 'email'},
-    function(email, password, done){
+    usernameField : 'email',
+    passReqToCallback : true},
+    function(req,email, password, done){
 
         User.findOne({email : email},async (error, user) => {
             
             if(error) {
+                req.flash('error',error);
                 console.log(error);
                 return done(error);
             }
             else  {
 
                 if(!user) {
+                    req.flash('error','User not found');
                     return done(null, false);
                 }
                 try {
                     const result = await bcrypt.compare(password, user.password);
+                    if(!result) {
+                        req.flash('error','Incorrect Password');
+                        return done(null, false);
+                    }
                     if(result) return done(null, user);
-
                     else return done(null, false);
                     
                 } catch (error) {
