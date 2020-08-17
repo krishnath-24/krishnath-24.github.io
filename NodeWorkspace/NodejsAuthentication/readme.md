@@ -77,6 +77,7 @@ app.get('/auth/google/callback',
 * cd Nodejsauthentication
 * npm install
 * nodemon
+* localhost:8000
 
 
 ## Contributing

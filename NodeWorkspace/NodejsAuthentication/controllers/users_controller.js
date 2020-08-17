@@ -92,7 +92,6 @@ module.exports.resetPassword = (req, res) => {
 
     const {oldPassword, newPassword,confirmPassword} = req.body;
 
-    console.log(oldPassword,newPassword,confirmPassword);
     if(newPassword != confirmPassword) {
         req.flash('error','The entered passwords dont match');
         return res.redirect('back');

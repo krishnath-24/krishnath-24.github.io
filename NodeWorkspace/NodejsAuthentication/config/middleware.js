@@ -1,15 +1,13 @@
 // set the flash messages
 module.exports.setFlash = (req, res, next) =>  {
 
-    // console.log(req.flash('success'));
-    // console.log(req.flash('error'));
-
+    // create the locals flash object 
     res.locals.flash = {
         'success' : req.flash('success'),
         'error' : req.flash('error')
     }
 
-
+    // pass on the callback
     next();
 }
 
